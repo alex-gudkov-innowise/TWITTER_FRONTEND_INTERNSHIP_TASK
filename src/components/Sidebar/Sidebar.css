@@ -1,3 +1,7 @@
+.Sidebar {
+    border-right: 2px solid var(--color-gray);
+}
+
 .Sidebar__TweetButton {
     background-color: var(--color-blue) !important;
     border: none !important;

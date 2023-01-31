@@ -1,0 +1,25 @@
+.Feed {
+    flex: 0.4;
+    border-right: 2px solid var(--color-gray);
+    min-width: fit-content;
+    overflow-y: scroll;
+    scrollbar-width: none; /* hide for Firefox */ 
+    -ms-overflow-style: none; /* hide for IE, Edge */ 
+}
+
+
+.Feed::-webkit-scrollbar {
+    display: none; /* hide for Chrome, Safari, Opera */
+}
+
+.Feed__header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-black);
+    padding: 15px 20px;
+}
+
+.Feed__header > h2 {
+    font-size: 20px;
+    font-weight: 800;
+}

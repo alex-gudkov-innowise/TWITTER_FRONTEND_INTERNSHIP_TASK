@@ -9,4 +9,9 @@ body {
 .App {
     display: flex;
     background-color: var(--color-black);
+    color: var(--color-white);
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
 }
