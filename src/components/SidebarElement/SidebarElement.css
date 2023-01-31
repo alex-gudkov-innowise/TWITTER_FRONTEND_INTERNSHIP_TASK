@@ -3,6 +3,8 @@
     align-items: center;
     cursor: pointer;
     color: var(--color-white);
+    /* width: 250px; */
+    flex: 1.0;
 }
 
 

@@ -1,6 +1,7 @@
 import { Avatar } from '@material-ui/core';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import IosShareIcon from '@mui/icons-material/IosShare';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import React from 'react';
 
@@ -21,7 +22,7 @@ function Post({ record }: PostProps) {
                 <div className="Post__header__userName">
                     <span>{'Alex'}</span>
                 </div>
-                <div className="Post__header__timestamp">
+                <div className="Post__header__createdAt">
                     <span>{record.createdAt.toDateString()}</span>
                 </div>
             </div>
@@ -32,9 +33,21 @@ function Post({ record }: PostProps) {
                 </div>
             </div>
             <div className="Post__footer">
-                <RepeatIcon fontSize="small" />
-                <FavoriteBorderIcon fontSize="small" />
-                <ChatBubbleOutlineIcon fontSize="small" />
+                <div className="Post__footer__comment">
+                    <ChatBubbleOutlineIcon fontSize="small" className="Post__footer__comment__icon" />
+                    <span>12</span>
+                </div>
+                <div className="Post__footer__retweet">
+                    <RepeatIcon fontSize="small" className="Post__footer__retweet__icon" />
+                    <span>34</span>
+                </div>
+                <div className="Post__footer__like">
+                    <FavoriteBorderIcon fontSize="small" className="Post__footer__like__icon" />
+                    <span>67</span>
+                </div>
+                <div className="Post__footer__share">
+                    <IosShareIcon fontSize="small" className="Post__footer__share__icon" />
+                </div>
             </div>
         </div>
     );

@@ -1,3 +1,5 @@
 .Widgets {
-    flex: 0.3;
+    flex: 0.2;
+    background-color: var(--color-black);
+
 }

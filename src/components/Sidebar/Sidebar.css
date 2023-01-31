@@ -1,5 +1,7 @@
 .Sidebar {
-    border-right: 2px solid var(--color-gray);
+    flex: 0.2;
+    border-right: 3px solid var(--color-gray);
+    background-color: var(--color-black);
 }
 
 .Sidebar__TweetButton {
@@ -11,4 +13,6 @@
     border-radius: 30px !important;
     height: 50px !important;
     margin-top: 20px !important;
+    flex: 1.0 !important;
+    /* width: 200px !important; */
 }

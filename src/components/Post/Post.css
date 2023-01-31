@@ -1,0 +1,122 @@
+.Post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 3px solid var(--color-gray);
+    padding-bottom: 10px;
+}
+
+.Post__header {
+    display: flex;
+}
+
+.Post__header__avatar {
+
+}
+
+.Post__header__userName {
+
+}
+
+.Post__header__createdAt {
+    color: var(--color-white-gray);
+}
+
+.Post__body {
+    display: flex;
+    word-wrap: break-word;
+}
+
+.Post__body__images {
+    border-radius: 20px;
+}
+
+.Post__footer {
+    display: flex;
+    justify-content: space-around;
+    color: var(--color-white-gray);
+}
+
+/* comment */
+.Post__footer__comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Post__footer__comment__icon {
+    padding: 10px;
+}
+
+.Post__footer__comment:hover {
+    color: var(--color-blue);
+    transition: color 100ms ease-out;
+}
+
+.Post__footer__comment:hover .Post__footer__comment__icon {
+    background-color: var(--color-dark-blue);
+    transition: color 100ms ease-out;
+    border-radius: 15px;
+}
+
+/* retweet */
+.Post__footer__retweet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Post__footer__retweet__icon {
+    padding: 10px;
+}
+
+.Post__footer__retweet:hover {
+    color: var(--color-green);
+    transition: color 100ms ease-out;
+}
+
+.Post__footer__retweet:hover .Post__footer__retweet__icon {
+    background-color: var(--color-dark-green);
+    transition: color 100ms ease-out;
+    border-radius: 15px;
+}
+
+/* like */
+.Post__footer__like {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Post__footer__like__icon {
+    padding: 10px;
+}
+
+.Post__footer__like:hover {
+    color: var(--color-pink);
+    transition: color 100ms ease-out;
+}
+
+.Post__footer__like:hover .Post__footer__like__icon {
+    background-color: var(--color-dark-pink);
+    transition: color 100ms ease-out;
+    border-radius: 15px;
+}
+
+
+/* share */
+.Post__footer__share__icon {
+    padding: 10px;
+}
+
+.Post__footer__share__icon:hover {
+    color: var(--color-blue);
+    transition: color 100ms ease-out;
+}
+
+.Post__footer__share__icon:hover {
+    background-color: var(--color-dark-blue);
+    transition: color 100ms ease-out;
+    border-radius: 15px;
+}
+
