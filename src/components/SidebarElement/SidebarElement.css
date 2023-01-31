@@ -1,0 +1,27 @@
+.SidebarElement {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+
+.SidebarElement:hover {
+    background-color: var(--color-gray);
+    border-radius: 30px;
+    color: var(--color-blue);
+    transition: color 100ms ease-out;
+}
+
+.SidebarElement > .MuiSvgIcon-root {
+    padding: 20px;
+}
+.SidebarElement > h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.SidebarElement__active {
+    color: var(--color-blue);
+}

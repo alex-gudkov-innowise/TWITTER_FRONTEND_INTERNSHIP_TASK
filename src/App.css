@@ -1,0 +1,12 @@
+body {
+    --color-blue: #1d9bf0;
+    --color-white: #e7e9ea;
+    --color-dark-white: #d6d9db;
+    --color-black: #000000;
+    --color-gray: #181818;
+}
+
+.App {
+    display: flex;
+    background-color: var(--color-black);
+}
