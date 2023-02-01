@@ -1,17 +1,19 @@
 import React from 'react';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
-import Feed from './components/Feed/Feed';
-import Sidebar from './components/Sidebar/Sidebar';
-import Widgets from './components/Widgets/Widgets';
-
+import Main from './components/Main/Main';
+import SignUp from './components/SignUp/SignUp';
 import './App.css';
 
 function App() {
     return (
         <div className="App">
-            <Sidebar />
-            <Feed />
-            <Widgets />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/sign-up" element={<SignUp />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

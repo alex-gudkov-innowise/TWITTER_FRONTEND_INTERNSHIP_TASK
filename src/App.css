@@ -35,22 +35,13 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0;
-    font-family: 'ChirpMedium';
+    padding: 0;
+    font-family: 'Chirp';
     font-size: 15px;
-
 }
 
 .App {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    display: block;
     height: 100vh;
     width: 100vw;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* padding: 0 10px; */
-    /* margin: 0 auto; */
-    
 }

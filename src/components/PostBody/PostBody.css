@@ -2,7 +2,7 @@
     word-wrap: break-word;
     margin-top: 5px;
     margin-bottom: 0;
-    font-family: 'Chirp';
+    /* font-family: 'Chirp'; */
 }
 
 .Post__body__images > img {

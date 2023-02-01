@@ -31,6 +31,10 @@
 .Sidebar__account__body__nick {
     color: var(--color-white-gray);
 }
+.Sidebar__account__body__name {
+    color: var(--color-white);
+    font-family: 'ChirpMedium';
+}
 
 .Sidebar__account__body {
     display: flex;

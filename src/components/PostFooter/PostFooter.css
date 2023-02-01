@@ -1,7 +1,7 @@
 .Post__footer {
     margin-top: 5px;
     display: flex;
-    font-family: 'Chirp';
+    /* font-family: 'Chirp'; */
     justify-content: space-around;
     color: var(--color-white-gray);
 }
