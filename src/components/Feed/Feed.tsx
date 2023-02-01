@@ -20,7 +20,7 @@ const records: RecordsEntity[] = [
     },
     {
         id: '2',
-        text: 'BBB',
+        text: 'Elon Musk works 25 hours a day',
         images: [],
         author: null,
         createdAt: new Date(),

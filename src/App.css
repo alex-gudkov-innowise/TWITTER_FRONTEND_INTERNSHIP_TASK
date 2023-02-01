@@ -29,12 +29,14 @@ body {
     --color-pink: #f4187e;
     --color-black: #000000;
     --color-gray: #181818;
+    --color-dark-gray: #070707;
     --color-white-gray: #71767b;
     --color-border-gray: #2f3336;
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0;
     font-family: 'ChirpMedium';
+    font-size: 15px;
 
 }
 

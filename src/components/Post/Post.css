@@ -1,9 +1,15 @@
 .Post {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
     border-bottom: 1px solid var(--color-border-gray);
-    padding-bottom: 5px;
+    padding: 15px 15px 5px 15px ;
+    transition: color 300ms;
+}
+
+.Post:hover {
+    transition: color 300ms;
+    background-color: var(--color-dark-gray);
 }
 
 .Post__header {
@@ -17,15 +23,20 @@
 }
 
 .Post__header__avatar {
-    margin: 10px;
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
+    /* margin: 10px; */
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.Post__header__avatar:hover {
+    opacity: 0.8;
 }
 
 .Post__header__userName {
-    padding-top: 10px;
-    padding-left: 5px;
+    /* padding-top: 10px; */
+    margin-left: 10px;
 }
 
 .Post__header__userName:hover {
@@ -34,15 +45,15 @@
 }
 
 .Post__header__userNick {
-    padding-top: 10px;
-    padding-left: 10px;
+    /* padding-top: 10px; */
+    margin-left: 10px;
     font-family: 'Chirp';
     color: var(--color-white-gray);
 }
 
 .Post__header__more {
     color: var(--color-white-gray);
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 .Post__header__more:hover {
@@ -54,21 +65,26 @@
 }
 
 .Post__header__createdAt {
-    padding-top: 10px;
-    padding-left: 10px;
+    /* padding-top: 10px; */
+    margin-left: 10px;
     font-family: 'Chirp';
     color: var(--color-white-gray);
 }
 
 .Post__body > p {
     word-wrap: break-word;
-    margin: 0 5px 5px 5px;
+    margin-top: 5px;
+    margin-bottom: 0;
     font-family: 'Chirp';
 }
 
 .Post__body__images > img {
-    width: 95%;
+    /* width: 100%; */
+    margin-top: 10px;
     border-radius: 10px;
+    border-bottom: 1px solid var(--color-border-gray);
+    max-height: 400px;
+    max-width: 100%;
 
 }
 
@@ -79,7 +95,9 @@
 }
 
 .Post__footer {
+    margin-top: 5px;
     display: flex;
+    font-family: 'Chirp';
     justify-content: space-around;
     color: var(--color-white-gray);
 }
@@ -93,7 +111,11 @@
 }
 
 .Post__footer__comment__icon {
-    padding: 10px;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-right: 5px;
+/* background-color: red; */
 }
 
 .Post__footer__comment:hover {
@@ -104,7 +126,6 @@
 .Post__footer__comment:hover .Post__footer__comment__icon {
     background-color: var(--color-dark-blue);
     transition: color 100ms ease-out;
-    border-radius: 15px;
 }
 
 /* retweet */
@@ -116,7 +137,10 @@
 }
 
 .Post__footer__retweet__icon {
-    padding: 10px;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-right: 5px;
 }
 
 .Post__footer__retweet:hover {
@@ -127,7 +151,6 @@
 .Post__footer__retweet:hover .Post__footer__retweet__icon {
     background-color: var(--color-dark-green);
     transition: color 100ms ease-out;
-    border-radius: 15px;
 }
 
 /* like */
@@ -139,7 +162,10 @@
 }
 
 .Post__footer__like__icon {
-    padding: 10px;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-right: 5px;
 }
 
 .Post__footer__like:hover {
@@ -150,13 +176,14 @@
 .Post__footer__like:hover .Post__footer__like__icon {
     background-color: var(--color-dark-pink);
     transition: color 100ms ease-out;
-    border-radius: 15px;
 }
 
 
 /* share */
 .Post__footer__share__icon {
-    padding: 10px;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -168,6 +195,5 @@
 .Post__footer__share__icon:hover {
     background-color: var(--color-dark-blue);
     transition: color 100ms ease-out;
-    border-radius: 15px;
 }
 
