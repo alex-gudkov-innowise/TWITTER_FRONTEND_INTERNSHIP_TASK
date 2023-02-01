@@ -1,6 +1,6 @@
 .Feed {
     flex: 0.4;
-    border-right: 2px solid var(--color-gray);
+    border-right: 1px solid var(--color-border-gray);
     /* min-width: fit-content; */
     overflow-y: scroll;
     background-color: var(--color-black);
@@ -17,9 +17,11 @@
 .Feed__header {
     position: sticky;
     top: 0;
-    border-bottom: 3px solid var(--color-gray);
+    border-bottom: 1px solid var(--color-border-gray);
     background-color: var(--color-black);
-    padding: 15px 20px;
+    padding: 1px 15px;
+    background-color: rgb(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
     z-index: 100;
 }
 

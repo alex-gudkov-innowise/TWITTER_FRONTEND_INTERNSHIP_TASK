@@ -16,11 +16,12 @@
 }
 
 .SidebarElement > .MuiSvgIcon-root {
-    padding: 20px;
+    padding: 10px;
 }
 .SidebarElement > h2 {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 15px;
     margin-right: 20px;
 }
 

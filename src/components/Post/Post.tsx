@@ -1,4 +1,3 @@
-import { Avatar } from '@material-ui/core';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IosShareIcon from '@mui/icons-material/IosShare';
@@ -16,9 +15,7 @@ function Post({ record }: PostProps) {
     return (
         <div className="Post">
             <div className="Post__header">
-                <div className="Post__header__avatar">
-                    <Avatar src="" />
-                </div>
+                <img src={require('./pic.png')} alt="avatar" className="Post__header__avatar" />
                 <div className="Post__header__userName">
                     <span>{'Alex'}</span>
                 </div>
@@ -29,7 +26,7 @@ function Post({ record }: PostProps) {
             <div className="Post__body">
                 <p>{record.text}</p>
                 <div className="Post__body__images">
-                    <img src="" />
+                    <img src={require('./pic2.png')} alt="post_image" />
                 </div>
             </div>
             <div className="Post__footer">

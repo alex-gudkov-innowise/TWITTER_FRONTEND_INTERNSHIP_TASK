@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-bottom: 3px solid var(--color-gray);
-    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border-gray);
+    padding-bottom: 5px;
 }
 
 .Post__header {
@@ -11,24 +11,38 @@
 }
 
 .Post__header__avatar {
-
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
 }
 
 .Post__header__userName {
-
+    padding-top: 10px;
+    padding-left: 5px;
 }
 
 .Post__header__createdAt {
+    padding-top: 10px;
+    padding-left: 10px;
     color: var(--color-white-gray);
 }
 
-.Post__body {
-    display: flex;
+.Post__body > p {
     word-wrap: break-word;
+    margin: 0 5px 5px 5px;
+}
+
+.Post__body__images > img {
+    width: 95%;
+    border-radius: 10px;
+
 }
 
 .Post__body__images {
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Post__footer {
@@ -42,6 +56,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .Post__footer__comment__icon {
@@ -64,6 +79,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .Post__footer__retweet__icon {
@@ -86,6 +102,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .Post__footer__like__icon {
@@ -107,6 +124,7 @@
 /* share */
 .Post__footer__share__icon {
     padding: 10px;
+    cursor: pointer;
 }
 
 .Post__footer__share__icon:hover {

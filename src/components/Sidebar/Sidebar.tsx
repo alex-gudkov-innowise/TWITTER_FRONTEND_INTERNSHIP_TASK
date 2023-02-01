@@ -29,6 +29,15 @@ function Sidebar() {
             <Button variant="outlined" className="Sidebar__TweetButton" fullWidth>
                 Tweet
             </Button>
+
+            <div className="Sidebar__account">
+                <img src={require('./pic.png')} alt="avatar" className="Sidebar__account__avatar" />
+                <div className="Sidebar__account__body">
+                    <span className="Sidebar__account__body__name">Alex</span>
+                    <span className="Sidebar__account__body__nick">@alex423342</span>
+                </div>
+                <MoreHorizIcon className="Sidebar__account__more" />
+            </div>
         </div>
     );
 }
