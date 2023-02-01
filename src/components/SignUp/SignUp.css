@@ -1,3 +1,30 @@
 .SignUp {
     display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+.SignUp__left {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    background-image: url(../../images/sign_up_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 120% 120%;
+    background-position: center;
+}
+
+.SignUp__right {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+
+    background-color: var(--color-black);
 }
