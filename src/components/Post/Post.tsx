@@ -6,6 +6,7 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import React from 'react';
 
 import './Post.css';
+import { RecordImagesEntity } from './RecordImagesEntity';
 import { RecordsEntity } from './RecordsEntity';
 
 interface PostProps {
@@ -33,7 +34,9 @@ function Post({ record }: PostProps) {
             <div className="Post__body">
                 <p>{record.text}</p>
                 <div className="Post__body__images">
-                    <img src={require('./pic2.png')} alt="post_image" />
+                    {record.images.map((recordImage: RecordImagesEntity) => (
+                        <img src={require('./' + recordImage.name)} alt="recordImage" key={recordImage.id} />
+                    ))}
                 </div>
             </div>
             <div className="Post__footer">

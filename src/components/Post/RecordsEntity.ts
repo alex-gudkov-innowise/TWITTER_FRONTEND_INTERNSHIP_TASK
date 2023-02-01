@@ -3,13 +3,13 @@ import { UsersEntity } from './UsersEntity';
 
 export interface RecordsEntity {
     author: UsersEntity | null;
-    children: RecordsEntity[];
+    children?: RecordsEntity[];
     createdAt: Date;
     id: string;
     images: RecordImagesEntity[];
     isComment: boolean;
-    isDeleted: boolean;
+    isDeleted?: boolean;
     isRetweet: boolean;
-    parent: RecordsEntity | null;
+    parent?: RecordsEntity | null;
     text: string;
 }
