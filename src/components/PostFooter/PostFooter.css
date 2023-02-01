@@ -17,7 +17,7 @@
 .Post__footer__comment__icon {
     padding: 8px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 22px !important;
     margin-right: 5px;
 /* background-color: red; */
 }
@@ -41,9 +41,9 @@
 }
 
 .Post__footer__retweet__icon {
+    font-size: 22px !important;
     padding: 8px;
     border-radius: 20px;
-    font-size: 20px;
     margin-right: 5px;
 }
 
@@ -68,7 +68,7 @@
 .Post__footer__like__icon {
     padding: 8px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 22px !important;
     margin-right: 5px;
 }
 
@@ -87,7 +87,7 @@
 .Post__footer__share__icon {
     padding: 8px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 22px !important;
     cursor: pointer;
 }
 

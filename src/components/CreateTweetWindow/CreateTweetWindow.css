@@ -16,7 +16,84 @@
 
 .CreateTweetWindow {
     padding: 25px;
-    background-color: red;
+    background-color: var(--color-black);
     border-radius: 15px;
+    padding: 10px;
     min-width: 250px;
+}
+
+.TweetButton {
+    background-color: var(--color-blue) !important;
+    border: none !important;
+    color: var(--color-white) !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 20px !important;
+    height: 35px !important;
+    font-size: 15px !important;
+    width: 110px !important;
+}
+
+.Close {
+    color: var(--color-white);
+
+}
+
+.header__avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.body {
+    border-bottom: 1px solid var(--color-border-gray);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.body__input {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    width: 400px;
+    height: 250px;
+    font-family: 'Chirp';
+    word-wrap: break-word;
+    outline: none;
+    font-size: 18px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__attachImage {
+    color: var(--color-blue);
+    padding: 8px;
+    font-size: 22px !important;
+    border-radius: 20px;
+}
+
+.footer__attachImage:hover {
+    background-color: var(--color-dark-blue);
+    cursor: pointer;
+}
+
+.header__close {
+    font-size: 22px !important;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.header__close:hover {
+    transition: color 300ms ease-out;
+    background-color: var(--color-gray);
+    cursor: pointer;
 }

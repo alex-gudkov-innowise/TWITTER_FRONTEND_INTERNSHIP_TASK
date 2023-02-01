@@ -8,6 +8,6 @@
 }
 
 .Post:hover {
-    transition: color 300ms;
+    transition: color 300ms ease-out;
     background-color: var(--color-dark-gray);
 }

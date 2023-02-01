@@ -10,7 +10,6 @@
 }
 
 .Post__header__avatar {
-    /* margin: 10px; */
     height: 50px;
     width: 50px;
     border-radius: 25px;
@@ -40,15 +39,18 @@
 
 .Post__header__more {
     color: var(--color-white-gray);
-    /* padding: 5px; */
+
+    font-size: 22px !important;
+    padding: 8px;
+    border-radius: 20px;
 }
 
 .Post__header__more:hover {
     color: var(--color-blue);
     transition: color 100ms ease-out;
     background-color: var(--color-dark-blue);
-    border-radius: 15px;
     cursor: pointer;
+
 }
 
 .Post__header__createdAt {
