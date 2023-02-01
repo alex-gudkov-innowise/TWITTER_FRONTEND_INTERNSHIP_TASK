@@ -1,6 +1,7 @@
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IosShareIcon from '@mui/icons-material/IosShare';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import React from 'react';
 
@@ -15,13 +16,19 @@ function Post({ record }: PostProps) {
     return (
         <div className="Post">
             <div className="Post__header">
-                <img src={require('./pic.png')} alt="avatar" className="Post__header__avatar" />
-                <div className="Post__header__userName">
-                    <span>{'Alex'}</span>
+                <div className="Post__header__leftContainer">
+                    <img src={require('./pic.png')} alt="avatar" className="Post__header__avatar" />
+                    <div className="Post__header__userName">
+                        <span>{'Alex'}</span>
+                    </div>
+                    <div className="Post__header__userNick">
+                        <span>{'@alex423342'}</span>
+                    </div>
+                    <div className="Post__header__createdAt">
+                        <span>{record.createdAt.toDateString()}</span>
+                    </div>
                 </div>
-                <div className="Post__header__createdAt">
-                    <span>{record.createdAt.toDateString()}</span>
-                </div>
+                <MoreHorizIcon className="Post__header__more" />
             </div>
             <div className="Post__body">
                 <p>{record.text}</p>

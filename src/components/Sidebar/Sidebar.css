@@ -2,9 +2,21 @@
     flex: 0.15;
     border-right: 1px solid var(--color-border-gray);
     background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.Sidebar__TweetButton {
+.Sidebar__menu {
+    
+}
+
+.Sidebar__menu__logo {
+    padding: 10px;
+    color: var(--color-dark-white);
+}
+
+.Sidebar__menu__TweetButton {
     background-color: var(--color-blue) !important;
     border: none !important;
     color: var(--color-white) !important;
@@ -18,12 +30,33 @@
     /* width: 200px !important; */
 }
 
+.Sidebar__menu__logo {
+    padding: 7px;
+    border-radius: 28px;
+}
+
+.Sidebar__menu__logo:hover {
+    color: var(--color-blue) !important;
+    background-color: var(--color-gray);
+    transition: color 100ms ease-out;
+    cursor: pointer;
+}
+
 .Sidebar__account {
-    margin-top: 250px;
     bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.Sidebar__account:hover {
+    background-color: var(--color-gray);
+    transition: color 100ms ease-out;
+    border-radius: 20px;
+}
+
+.Sidebar__account__container {
+    display: flex;
 }
 
 .Sidebar__account__avatar {

@@ -8,6 +8,12 @@
 
 .Post__header {
     display: flex;
+    justify-content: space-between;
+}
+
+.Post__header__leftContainer {
+    display: flex;
+    
 }
 
 .Post__header__avatar {
@@ -22,15 +28,42 @@
     padding-left: 5px;
 }
 
+.Post__header__userName:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.Post__header__userNick {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: 'Chirp';
+    color: var(--color-white-gray);
+}
+
+.Post__header__more {
+    color: var(--color-white-gray);
+    padding: 5px;
+}
+
+.Post__header__more:hover {
+    color: var(--color-blue);
+    transition: color 100ms ease-out;
+    background-color: var(--color-dark-blue);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
 .Post__header__createdAt {
     padding-top: 10px;
     padding-left: 10px;
+    font-family: 'Chirp';
     color: var(--color-white-gray);
 }
 
 .Post__body > p {
     word-wrap: break-word;
     margin: 0 5px 5px 5px;
+    font-family: 'Chirp';
 }
 
 .Post__body__images > img {

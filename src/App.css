@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Chirp';
+    src: url(./fonts/Chirp.ttf);
+}
+
+@font-face {
+    font-family: 'ChirpMedium';
+    src: url(./fonts/ChirpMedium.ttf);
+}
+
+@font-face {
+    font-family: 'ChirpBold';
+    src: url(./fonts/ChirpBold.ttf);
+}
+
+@font-face {
+    font-family: 'ChirpHeavy';
+    src: url(./fonts/ChirpHeavy.ttf);
+}
+
 body {
     --color-blue: #1d9bf0;
     --color-white: #e7e9ea;
@@ -14,6 +34,8 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0;
+    font-family: 'ChirpMedium';
+
 }
 
 .App {
