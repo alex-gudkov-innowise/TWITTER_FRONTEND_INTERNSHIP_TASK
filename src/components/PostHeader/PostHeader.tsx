@@ -12,7 +12,7 @@ function PostHeader({ record }: PostHeaderProps) {
     return (
         <div className="Post__header">
             <div className="Post__header__leftContainer">
-                <img src={require('./pic.png')} alt="avatar" className="Post__header__avatar" />
+                <img src={require('../../static/images/avatar.png')} alt="avatar" className="Post__header__avatar" />
                 <div className="Post__header__userName">
                     <span>{'Alex'}</span>
                 </div>

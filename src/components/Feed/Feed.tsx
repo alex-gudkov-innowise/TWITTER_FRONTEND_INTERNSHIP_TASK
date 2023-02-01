@@ -11,8 +11,8 @@ const records: RecordsEntity[] = [
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ex at ab alias nemo quo voluptate dolores dolor unde repellendus quam nihil, dolorum possimus eum maxime asperiores placeat doloremque voluptatibus.',
         images: [
             {
-                id: '2',
-                name: 'pic2.jpg',
+                id: '1',
+                name: '1.jpg',
             },
         ],
         author: null,
@@ -25,8 +25,8 @@ const records: RecordsEntity[] = [
         text: 'Elon Musk works 25 hours a day',
         images: [
             {
-                id: '3',
-                name: 'pic3.jpg',
+                id: '2',
+                name: '2.jpg',
             },
         ],
         author: null,

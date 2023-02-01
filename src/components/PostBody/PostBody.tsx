@@ -14,7 +14,11 @@ function PostBody({ record }: PostBodyProps) {
             <p>{record.text}</p>
             <div className="Post__body__images">
                 {record.images.map((recordImage: RecordImagesEntity) => (
-                    <img src={require('./' + recordImage.name)} alt="recordImage" key={recordImage.id} />
+                    <img
+                        src={require('../../static/images/' + recordImage.name)}
+                        alt="recordImage"
+                        key={recordImage.id}
+                    />
                 ))}
             </div>
         </div>

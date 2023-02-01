@@ -6,7 +6,11 @@ function SidebarAccountTab() {
     return (
         <div className="Sidebar__account">
             <div className="Sidebar__account__container">
-                <img src={require('./pic.png')} alt="avatar" className="Sidebar__account__avatar" />
+                <img
+                    src={require('../../static/images/avatar.png')}
+                    alt="avatar"
+                    className="Sidebar__account__avatar"
+                />
                 <div className="Sidebar__account__body">
                     <span className="Sidebar__account__body__name">Alex</span>
                     <span className="Sidebar__account__body__nick">@alex423342</span>

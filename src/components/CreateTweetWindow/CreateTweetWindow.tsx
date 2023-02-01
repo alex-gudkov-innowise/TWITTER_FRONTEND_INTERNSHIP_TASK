@@ -23,7 +23,7 @@ function CreateTweetWindow({ setVisible, visible }: CreateTweetWindowProps) {
         >
             <div className="CreateTweetWindow" onClick={(event: BaseSyntheticEvent) => event.stopPropagation()}>
                 <div className="header">
-                    <img src={require('./pic.png')} alt="avatar" className="header__avatar" />
+                    <img src={require('../../static/images/avatar.png')} alt="avatar" className="header__avatar" />
                     <CloseIcon className="header__close" onClick={closeTweetWindow} />
                 </div>
                 <div className="body">
