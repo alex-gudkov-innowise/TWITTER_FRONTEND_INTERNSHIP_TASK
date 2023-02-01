@@ -9,11 +9,10 @@ import TagIcon from '@mui/icons-material/Tag';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { Button } from '@mui/material';
 import React from 'react';
+
 import './Sidebar.css';
-
+import SidebarAccountTab from '../SidebarAccountTab/SidebarAccountTab';
 import SidebarElement from '../SidebarElement/SidebarElement';
-
-// import TwitterIcon from '@mui/icons-material/Twitter';
 
 function Sidebar() {
     return (
@@ -35,16 +34,7 @@ function Sidebar() {
                 </Button>
             </div>
 
-            <div className="Sidebar__account">
-                <div className="Sidebar__account__container">
-                    <img src={require('./pic.png')} alt="avatar" className="Sidebar__account__avatar" />
-                    <div className="Sidebar__account__body">
-                        <span className="Sidebar__account__body__name">Alex</span>
-                        <span className="Sidebar__account__body__nick">@alex423342</span>
-                    </div>
-                </div>
-                <MoreHorizIcon className="Sidebar__account__more" />
-            </div>
+            <SidebarAccountTab />
         </div>
     );
 }

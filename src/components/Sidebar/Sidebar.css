@@ -41,35 +41,3 @@
     transition: color 100ms ease-out;
     cursor: pointer;
 }
-
-.Sidebar__account {
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.Sidebar__account:hover {
-    background-color: var(--color-gray);
-    transition: color 100ms ease-out;
-    border-radius: 20px;
-}
-
-.Sidebar__account__container {
-    display: flex;
-}
-
-.Sidebar__account__avatar {
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
-}
-
-.Sidebar__account__body__nick {
-    color: var(--color-white-gray);
-}
-
-.Sidebar__account__body {
-    display: flex;
-    flex-direction: column;
-}

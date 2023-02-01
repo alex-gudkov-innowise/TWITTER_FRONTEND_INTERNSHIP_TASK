@@ -1,0 +1,38 @@
+.Sidebar__account {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    /* border-width: 5px; */
+    padding: 10px;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.Sidebar__account:hover {
+    background-color: var(--color-gray);
+    transition: color 100ms ease-out;
+    cursor: pointer;
+}
+
+.Sidebar__account__container {
+    display: flex;
+}
+
+.Sidebar__account__avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.Sidebar__account__body__nick {
+    color: var(--color-white-gray);
+}
+
+.Sidebar__account__body {
+    display: flex;
+    flex-direction: column;
+}

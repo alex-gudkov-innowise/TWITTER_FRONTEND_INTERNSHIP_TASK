@@ -1,16 +1,25 @@
 .SidebarElement {
     display: flex;
+    float: left;
     align-items: center;
     cursor: pointer;
     color: var(--color-dark-white);
     /* width: 250px; */
-    flex: 1.0;
+    /* flex: 1.0; */
+    width: auto;
+    border-radius: 30px;
+    /* background-color: red; */
+    padding-right: 10px;
+}
+
+.SidebarElement__container {
+    width: 100%;
+    display: flex;
 }
 
 
 .SidebarElement:hover {
     background-color: var(--color-gray);
-    border-radius: 30px;
     color: var(--color-blue);
     transition: color 100ms ease-out;
 }
