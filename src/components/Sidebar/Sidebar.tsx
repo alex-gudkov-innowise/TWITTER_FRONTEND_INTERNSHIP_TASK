@@ -8,13 +8,16 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import TagIcon from '@mui/icons-material/Tag';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Sidebar.css';
+import CreateTweetWindow from '../CreateTweetWindow/CreateTweetWindow';
 import SidebarAccountTab from '../SidebarAccountTab/SidebarAccountTab';
 import SidebarElement from '../SidebarElement/SidebarElement';
 
 function Sidebar() {
+    const [isVisibleCreateTweetWindow, setVisibleCreateTweetWindow] = useState(false);
+
     return (
         <div className="Sidebar">
             <div className="Sidebar__menu">
@@ -29,9 +32,18 @@ function Sidebar() {
                 <SidebarElement Icon={PersonOutlineIcon} text={'Profile'} />
                 <SidebarElement Icon={MoreHorizIcon} text={'More'} />
 
-                <Button variant="outlined" className="Sidebar__menu__TweetButton" fullWidth>
+                <Button
+                    variant="outlined"
+                    className="Sidebar__menu__TweetButton"
+                    fullWidth
+                    onClick={() => {
+                        setVisibleCreateTweetWindow(true);
+                    }}
+                >
                     Tweet
                 </Button>
+
+                <CreateTweetWindow visible={isVisibleCreateTweetWindow} setVisible={setVisibleCreateTweetWindow} />
             </div>
 
             <SidebarAccountTab />
