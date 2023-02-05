@@ -8,7 +8,7 @@ import Widgets from '../Widgets/Widgets';
 function Home() {
     return (
         <div className="Home">
-            <Sidebar />
+            <Sidebar activeElement="Home" />
             <Feed />
             <Widgets />
         </div>

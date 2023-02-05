@@ -15,7 +15,11 @@ import CreateTweetWindow from '../CreateTweetWindow/CreateTweetWindow';
 import SidebarAccountTab from '../SidebarAccountTab/SidebarAccountTab';
 import SidebarElement from '../SidebarElement/SidebarElement';
 
-function Sidebar() {
+interface SidebarProps {
+    activeElement: string;
+}
+
+function Sidebar({ activeElement }: SidebarProps) {
     const [isVisibleCreateTweetWindow, setVisibleCreateTweetWindow] = useState(false);
 
     return (
@@ -23,14 +27,18 @@ function Sidebar() {
             <div className="Sidebar__menu">
                 <TwitterIcon className="Sidebar__menu__logo" />
 
-                <SidebarElement active Icon={HomeIcon} text={'Home'} />
-                <SidebarElement Icon={TagIcon} text={'Explore'} />
-                <SidebarElement Icon={NotificationsNoneIcon} text={'Notifications'} />
-                <SidebarElement Icon={MailOutlineIcon} text={'Messages'} />
-                <SidebarElement Icon={BookmarkBorderIcon} text={'Bookmarks'} />
-                <SidebarElement Icon={ListAltIcon} text={'Lists'} />
-                <SidebarElement Icon={PersonOutlineIcon} text={'Profile'} />
-                <SidebarElement Icon={MoreHorizIcon} text={'More'} />
+                <SidebarElement active={activeElement === 'Home'} Icon={HomeIcon} text={'Home'} />
+                <SidebarElement active={activeElement === 'Explore'} Icon={TagIcon} text={'Explore'} />
+                <SidebarElement
+                    active={activeElement === 'Notifications'}
+                    Icon={NotificationsNoneIcon}
+                    text={'Notifications'}
+                />
+                <SidebarElement active={activeElement === 'Messages'} Icon={MailOutlineIcon} text={'Messages'} />
+                <SidebarElement active={activeElement === 'Bookmarks'} Icon={BookmarkBorderIcon} text={'Bookmarks'} />
+                <SidebarElement active={activeElement === 'Lists'} Icon={ListAltIcon} text={'Lists'} />
+                <SidebarElement active={activeElement === 'Profile'} Icon={PersonOutlineIcon} text={'Profile'} />
+                <SidebarElement active={activeElement === 'More'} Icon={MoreHorizIcon} text={'More'} />
 
                 <Button
                     variant="outlined"
