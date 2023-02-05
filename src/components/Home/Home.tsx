@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './Main.css';
+import './Home.css';
 import Feed from '../Feed/Feed';
 import Sidebar from '../Sidebar/Sidebar';
 import Widgets from '../Widgets/Widgets';
 
-function Main() {
+function Home() {
     return (
-        <div className="Main">
+        <div className="Home">
             <Sidebar />
             <Feed />
             <Widgets />
@@ -15,4 +15,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default Home;
