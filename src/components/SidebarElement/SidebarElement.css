@@ -21,7 +21,7 @@
 .SidebarElement:hover {
     background-color: var(--color-gray);
     color: var(--color-blue);
-    transition: color 100ms ease-out;
+    transition: 300ms ease;
 }
 
 .SidebarElement > .MuiSvgIcon-root {
