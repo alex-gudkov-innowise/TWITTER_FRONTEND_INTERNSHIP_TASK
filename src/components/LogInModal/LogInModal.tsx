@@ -19,7 +19,7 @@ function LogInModal({ setVisible, visible }: LogInModalProps) {
             <div className="LogInModal" onClick={(event: BaseSyntheticEvent) => event.stopPropagation()}>
                 <div className="Header">
                     <CloseIcon className="Header__Close" onClick={closeLogInModal} />
-                    <h2 className="Header__Title">Create an account</h2>
+                    <h2 className="Header__Title">Log in to Twitter</h2>
                 </div>
                 <form action="POST" className="Form">
                     <input type="text" placeholder="email" className="Form__Input" />

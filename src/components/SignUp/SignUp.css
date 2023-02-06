@@ -12,11 +12,19 @@
     justify-content: center;
     background-color: var(--color-blue);
     color: var(--color-white);
-    background-image: url(../../images/sign_up_background.png);
+    background-color: var(--color-blue);
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 120% 120%;
     background-position: center;
+    position: relative;
+}
+
+.SignUp__left__Image {
+    color: rgba(0, 0, 0, 0.15);
+    position: absolute;
+    width: 150vw !important;
+    height: 150vw !important;
 }
 
 .SignUp__right {
