@@ -45,7 +45,7 @@
     width: 300px !important;
 }
 
-.SignUpWidget__body__signIn {
+.SignUpWidget__body__LogIn {
     background-color: var(--color-black) !important;
     border: 2px solid var(--color-blue) !important;
     font-weight: 900 !important;

@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-.SignUpModal {
+.LogInModal {
     padding: 25px;
     background-color: var(--color-black);
     border-radius: 15px;
@@ -25,7 +25,7 @@
     align-items: center;
 }
 
-.SignUpButton {
+.LogInButton {
     background-color: var(--color-blue) !important;
     border: none !important;
     color: var(--color-white) !important;

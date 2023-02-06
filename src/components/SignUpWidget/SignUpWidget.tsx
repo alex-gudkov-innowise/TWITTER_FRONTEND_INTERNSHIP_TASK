@@ -3,11 +3,12 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import React, { useState } from 'react';
 
 import './SignUpWidget.css';
+import LogInModal from '../LogInModal/LogInModal';
 import SignUpModal from '../SignUpModal/SignUpModal';
 
 function SignUpWidget() {
     const [isVisibleSignUpModal, setVisibleSignUpModal] = useState(false);
-    const [isVisibleLogInWindow, setVisibleLogInWindow] = useState(false);
+    const [isVisibleLogInModal, setVisibleLogInModal] = useState(false);
 
     return (
         <div className="SignUpWidget">
@@ -30,10 +31,10 @@ function SignUpWidget() {
                 </Button>
                 <Button
                     variant="outlined"
-                    className="SignUpWidget__body__signIn"
+                    className="SignUpWidget__body__LogIn"
                     fullWidth
                     onClick={() => {
-                        setVisibleLogInWindow(true);
+                        setVisibleLogInModal(true);
                     }}
                 >
                     Log in
@@ -41,6 +42,7 @@ function SignUpWidget() {
 
                 <SignUpModal visible={isVisibleSignUpModal} setVisible={setVisibleSignUpModal} />
 
+                <LogInModal visible={isVisibleLogInModal} setVisible={setVisibleLogInModal} />
                 {/* <LogInWindow /> */}
             </div>
         </div>
