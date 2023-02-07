@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Home.css';
 import Feed from '../Feed/Feed';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../sidebar/sidebar';
 import Widgets from '../Widgets/Widgets';
 
 function Home() {

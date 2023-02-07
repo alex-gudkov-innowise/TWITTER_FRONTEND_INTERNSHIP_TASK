@@ -1,13 +1,13 @@
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import React from 'react';
-import './SidebarAccountTab.css';
+import './account-switcher-button.css';
 
-function SidebarAccountTab() {
+function AccountSwitcherButton() {
     return (
         <div className="Sidebar__account">
             <div className="Sidebar__account__container">
                 <img
-                    src={require('../../static/images/avatar.png')}
+                    src={require('../../../static/images/avatar.png')}
                     alt="avatar"
                     className="Sidebar__account__avatar"
                 />
@@ -21,4 +21,4 @@ function SidebarAccountTab() {
     );
 }
 
-export default SidebarAccountTab;
+export default AccountSwitcherButton;

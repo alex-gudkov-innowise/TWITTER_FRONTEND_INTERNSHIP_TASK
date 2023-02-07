@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './profile.css';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../sidebar/sidebar';
 import Widgets from '../Widgets/Widgets';
 
 import ProfileFeed from './profile-feed/profile-feed';

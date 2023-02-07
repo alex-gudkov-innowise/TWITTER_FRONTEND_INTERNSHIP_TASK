@@ -10,10 +10,11 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
 
-import './Sidebar.css';
+import './sidebar.css';
 import CreateTweetWindow from '../CreateTweetWindow/CreateTweetWindow';
-import SidebarAccountTab from '../SidebarAccountTab/SidebarAccountTab';
-import SidebarElement from '../SidebarElement/SidebarElement';
+
+import AccountSwitcherButton from './account-switcher-button/account-switcher-button';
+import SidebarTab from './sidebar-tab/sidebar-tab';
 
 interface SidebarProps {
     activeElement: string;
@@ -24,25 +25,44 @@ function Sidebar({ activeElement }: SidebarProps) {
 
     return (
         <div className="Sidebar">
-            <div className="Sidebar__menu">
-                <TwitterIcon className="Sidebar__menu__logo" />
+            <div className="Sidebar__body">
+                <TwitterIcon className="Sidebar__logo" />
 
-                <SidebarElement active={activeElement === 'Home'} Icon={HomeIcon} text={'Home'} />
-                <SidebarElement active={activeElement === 'Explore'} Icon={TagIcon} text={'Explore'} />
-                <SidebarElement
-                    active={activeElement === 'Notifications'}
-                    Icon={NotificationsNoneIcon}
-                    text={'Notifications'}
-                />
-                <SidebarElement active={activeElement === 'Messages'} Icon={MailOutlineIcon} text={'Messages'} />
-                <SidebarElement active={activeElement === 'Bookmarks'} Icon={BookmarkBorderIcon} text={'Bookmarks'} />
-                <SidebarElement active={activeElement === 'Lists'} Icon={ListAltIcon} text={'Lists'} />
-                <SidebarElement active={activeElement === 'Profile'} Icon={PersonOutlineIcon} text={'Profile'} />
-                <SidebarElement active={activeElement === 'More'} Icon={MoreHorizIcon} text={'More'} />
+                <SidebarTab active={activeElement === 'Home'} Icon={HomeIcon}>
+                    Home
+                </SidebarTab>
+
+                <SidebarTab active={activeElement === 'Explore'} Icon={TagIcon}>
+                    Explore
+                </SidebarTab>
+
+                <SidebarTab active={activeElement === 'Notifications'} Icon={NotificationsNoneIcon}>
+                    Notifications
+                </SidebarTab>
+
+                <SidebarTab active={activeElement === 'Messages'} Icon={MailOutlineIcon}>
+                    Messages
+                </SidebarTab>
+
+                <SidebarTab active={activeElement === 'Bookmarks'} Icon={BookmarkBorderIcon}>
+                    Bookmarks
+                </SidebarTab>
+
+                <SidebarTab active={activeElement === 'Lists'} Icon={ListAltIcon}>
+                    Lists
+                </SidebarTab>
+
+                <SidebarTab active={activeElement === 'Profile'} Icon={PersonOutlineIcon}>
+                    Profile
+                </SidebarTab>
+
+                <SidebarTab active={activeElement === 'More'} Icon={MoreHorizIcon}>
+                    More
+                </SidebarTab>
 
                 <Button
                     variant="outlined"
-                    className="Sidebar__menu__TweetButton"
+                    className="Sidebar__create-tweet-button"
                     fullWidth
                     onClick={() => {
                         setVisibleCreateTweetWindow(true);
@@ -54,7 +74,7 @@ function Sidebar({ activeElement }: SidebarProps) {
                 <CreateTweetWindow visible={isVisibleCreateTweetWindow} setVisible={setVisibleCreateTweetWindow} />
             </div>
 
-            <SidebarAccountTab />
+            <AccountSwitcherButton />
         </div>
     );
 }
