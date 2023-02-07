@@ -1,4 +1,4 @@
-import { RecordsEntity } from '../components/Post/RecordsEntity';
+import { RecordsEntity } from '../interfaces/records.entity';
 
 import { user } from './user';
 

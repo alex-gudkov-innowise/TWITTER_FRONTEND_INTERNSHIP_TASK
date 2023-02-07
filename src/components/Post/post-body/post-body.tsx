@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './PostBody.css';
-import { RecordImagesEntity } from '../Post/RecordImagesEntity';
-import { RecordsEntity } from '../Post/RecordsEntity';
+import './post-body.css';
+import { RecordImagesEntity } from '../../../interfaces/record-images.entity';
+import { RecordsEntity } from '../../../interfaces/records.entity';
 
 interface PostBodyProps {
     record: RecordsEntity;
@@ -15,7 +15,7 @@ function PostBody({ record }: PostBodyProps) {
             <div className="Post__body__images">
                 {record.images.map((recordImage: RecordImagesEntity) => (
                     <img
-                        src={require('../../static/images/' + recordImage.name)}
+                        src={require('../../../static/images/' + recordImage.name)}
                         alt="recordImage"
                         key={recordImage.id}
                     />

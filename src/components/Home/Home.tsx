@@ -11,7 +11,7 @@ function Home() {
     return (
         <div className="Home">
             <Sidebar activeElement="Home" />
-            <div className="Home__body">
+            <div className="Home__container">
                 <HomeHeader />
                 <HomeFeed />
             </div>

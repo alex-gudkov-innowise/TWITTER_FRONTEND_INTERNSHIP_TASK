@@ -1,4 +1,4 @@
-import { RecordsEntity } from './RecordsEntity';
+import { RecordsEntity } from './records.entity';
 
 export interface RecordImagesEntity {
     id: string;

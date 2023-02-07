@@ -4,14 +4,9 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import React from 'react';
 
-import './PostFooter.css';
-import { RecordsEntity } from '../Post/RecordsEntity';
+import './post-footer.css';
 
-interface PostFooterProps {
-    record: RecordsEntity;
-}
-
-function PostFooter({ record }: PostFooterProps) {
+function PostFooter() {
     return (
         <div className="Post__footer">
             <div className="Post__footer__comment">

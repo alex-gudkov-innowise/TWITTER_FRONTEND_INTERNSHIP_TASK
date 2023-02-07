@@ -1,4 +1,4 @@
-import { UsersEntity } from '../components/Post/UsersEntity';
+import { UsersEntity } from '../interfaces/users.entity';
 
 export const user: UsersEntity = {
     id: '1',

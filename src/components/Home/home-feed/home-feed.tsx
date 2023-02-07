@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './home-feed.css';
+import { RecordsEntity } from '../../../interfaces/records.entity';
 import { records } from '../../../server-response/records';
-import Post from '../../Post/Post';
-import { RecordsEntity } from '../../Post/RecordsEntity';
+import Post from '../../post/post';
 
 function HomeFeed() {
     return (

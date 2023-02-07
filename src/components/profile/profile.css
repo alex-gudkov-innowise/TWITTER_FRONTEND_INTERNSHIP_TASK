@@ -20,6 +20,8 @@
     
     scrollbar-width: none; /* hide for Firefox */ 
     -ms-overflow-style: none; /* hide for IE, Edge */ 
+    padding-bottom: 50vh;
+
 }
 
 .Profile__container::-webkit-scrollbar {
