@@ -12,7 +12,7 @@ function Profile() {
     return (
         <div className="Profile">
             <Sidebar activeElement="Profile" />
-            <div className="container">
+            <div className="Profile__container">
                 <ProfileHeader />
                 <ProfileInfo />
                 <ProfileFeed />

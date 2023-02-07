@@ -8,7 +8,7 @@
     width: 100vw;
 }
 
-.container {
+.Profile__container {
     flex: 0.4;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,6 @@
     -ms-overflow-style: none; /* hide for IE, Edge */ 
 }
 
-.container::-webkit-scrollbar {
+.Profile__container::-webkit-scrollbar {
     display: none; /* hide for Chrome, Safari, Opera */
 }
