@@ -1,9 +1,8 @@
 import Twitter from '@mui/icons-material/Twitter';
 import React from 'react';
 
-import SignUpInfoList from './SignUpInfoList/SignUpInfoList';
-import SignUpWidget from './auth-widget/auth-widget';
-
+import AuthInfoWidget from './auth-info-widget/auth-info-widget';
+import AuthWidget from './auth-widget/auth-widget';
 import './auth.css';
 
 function Auth() {
@@ -11,10 +10,10 @@ function Auth() {
         <div className="Auth">
             <div className="Auth__left-container">
                 <Twitter className="Auth__left-container__background" />
-                <SignUpInfoList />
+                <AuthInfoWidget />
             </div>
             <div className="Auth__right-container">
-                <SignUpWidget />
+                <AuthWidget />
             </div>
         </div>
     );

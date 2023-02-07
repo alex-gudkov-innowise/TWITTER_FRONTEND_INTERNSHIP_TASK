@@ -1,19 +1,19 @@
-.SignUpInfoList {
+.AuthInfoWidget {
     display: flex;
     flex-direction: column;
 }
 
-.SignUpInfoList__element {
+.AuthInfoWidget__element {
     display: flex;
     margin-bottom: 30px;
 }
 
-.SignUpInfoList__element__icon {
+.AuthInfoWidget__icon {
     font-size: 30px !important;
     margin-right: 10px !important;
 
 }
 
-.SignUpInfoList__element__text {
+.AuthInfoWidget__text {
     font-size: 20px;
 }
