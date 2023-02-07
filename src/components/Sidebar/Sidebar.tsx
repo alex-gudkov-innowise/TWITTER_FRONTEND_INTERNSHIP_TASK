@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 
 import './sidebar.css';
-import CreateTweetWindow from '../CreateTweetWindow/CreateTweetWindow';
+import CreateTweetModal from '../create-tweet-modal/create-tweet-modal';
 
 import AccountSwitcherButton from './account-switcher-button/account-switcher-button';
 import SidebarTab from './sidebar-tab/sidebar-tab';
@@ -21,7 +21,7 @@ interface SidebarProps {
 }
 
 function Sidebar({ activeElement }: SidebarProps) {
-    const [isVisibleCreateTweetWindow, setVisibleCreateTweetWindow] = useState(false);
+    const [isVisibleCreateTweetModal, setVisibleCreateTweetModal] = useState(false);
 
     return (
         <div className="Sidebar">
@@ -65,13 +65,13 @@ function Sidebar({ activeElement }: SidebarProps) {
                     className="Sidebar__create-tweet-button"
                     fullWidth
                     onClick={() => {
-                        setVisibleCreateTweetWindow(true);
+                        setVisibleCreateTweetModal(true);
                     }}
                 >
                     Tweet
                 </Button>
 
-                <CreateTweetWindow visible={isVisibleCreateTweetWindow} setVisible={setVisibleCreateTweetWindow} />
+                <CreateTweetModal visible={isVisibleCreateTweetModal} setVisible={setVisibleCreateTweetModal} />
             </div>
 
             <AccountSwitcherButton />

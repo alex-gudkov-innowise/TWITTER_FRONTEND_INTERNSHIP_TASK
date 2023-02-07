@@ -1,4 +1,4 @@
-.CreateTweetWindow__background {
+.CreateTweetModal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -9,13 +9,13 @@
     z-index: 200;
 }
 
-.CreateTweetWindow__isActive {
+.CreateTweetModal_active {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.CreateTweetWindow {
+.CreateTweetModal__container {
     padding: 25px;
     background-color: var(--color-black);
     border-radius: 15px;
@@ -23,41 +23,40 @@
     min-width: 250px;
 }
 
-.TweetButton {
-    background-color: var(--color-blue) !important;
-    border: none !important;
-    color: var(--color-white) !important;
-    font-weight: 900 !important;
-    text-transform: inherit !important;
-    border-radius: 20px !important;
-    height: 35px !important;
-    font-size: 15px !important;
-    width: 110px !important;
+.CreateTweetModal__header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.Close {
-    color: var(--color-white);
-
-}
-
-.header__avatar {
+.CreateTweetModal__user-avatar {
     height: 50px;
     width: 50px;
     border-radius: 25px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
+.CreateTweetModal__close {
+    color: var(--color-white);
 }
 
-.body {
+.CreateTweetModal__close {
+    font-size: 22px !important;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.CreateTweetModal__close:hover {
+    transition: 300ms ease;
+    background-color: var(--color-gray);
+    cursor: pointer;
+}
+
+.CreateTweetModal__body {
     border-bottom: 1px solid var(--color-border-gray);
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
-.body__input {
+.CreateTweetModal__input {
     background-color: var(--color-black);
     color: var(--color-white);
     border: none;
@@ -68,33 +67,34 @@
     font-size: 18px;
 }
 
-.footer {
+.CreateTweetModal__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer__attachImage {
+
+.CreateTweetModal__attach-image {
     color: var(--color-blue);
     padding: 8px;
     font-size: 22px !important;
     border-radius: 20px;
 }
 
-.footer__attachImage:hover {
+.CreateTweetModal__attach-image:hover {
     background-color: var(--color-dark-blue);
     transition: 300ms ease;
     cursor: pointer;
 }
 
-.header__close {
-    font-size: 22px !important;
-    padding: 8px;
-    border-radius: 20px;
-}
-
-.header__close:hover {
-    transition: 300ms ease;
-    background-color: var(--color-gray);
-    cursor: pointer;
+.CreateTweetModal__tweet-button {
+    background-color: var(--color-blue) !important;
+    border: none !important;
+    color: var(--color-white) !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 20px !important;
+    height: 35px !important;
+    font-size: 15px !important;
+    width: 110px !important;
 }
