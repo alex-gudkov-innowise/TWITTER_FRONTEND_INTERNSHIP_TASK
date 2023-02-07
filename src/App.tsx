@@ -4,7 +4,7 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Auth from './components/auth/auth';
 import Home from './components/home/home';
 import Profile from './components/profile/profile';
-import './App.css';
+import './app.css';
 
 function App() {
     return (
