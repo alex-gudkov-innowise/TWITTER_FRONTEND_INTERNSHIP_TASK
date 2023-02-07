@@ -1,4 +1,4 @@
-.Container {
+.LogInModal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -8,13 +8,13 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.IsActive {
+.LogInModal_active {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.SignUpModal {
+.LogInModal__container {
     padding: 25px;
     background-color: var(--color-black);
     border-radius: 15px;
@@ -25,20 +25,7 @@
     align-items: center;
 }
 
-.SignUpButton {
-    background-color: var(--color-blue) !important;
-    border: none !important;
-    color: var(--color-white) !important;
-    font-weight: 900 !important;
-    text-transform: inherit !important;
-    border-radius: 20px !important;
-    height:40px !important;
-    font-size: 16px !important;
-    width: 100% !important;
-    margin-top: 30px !important;
-}
-
-.Header {
+.LogInModal__header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--color-border-gray);
@@ -46,30 +33,30 @@
     width: 100%;
 }
 
-.Header__Close {
+.LogInModal__close {
     font-size: 22px !important;
     padding: 8px;
     border-radius: 20px;
     margin-right: 10px;
 }
 
-.Header__Close:hover {
+.LogInModal__close:hover {
     transition: 300ms ease;
     background-color: var(--color-gray);
     cursor: pointer;
 }
 
-.Header__Title {
+.LogInModal__title {
     font-size: 18px;
     margin: 0;
 }
 
-.Form {
+.LogInModal__form {
     display: flex;
     flex-direction: column;
 }
 
-.Form__Input {
+.LogInModal__input {
     width: 100%;
     border: none;
     outline: none;
@@ -83,7 +70,20 @@
     padding-left: 10px;
 }
 
-.Form__Input:focus {
+.LogInModal__input:focus {
     border-bottom-color: var(--color-blue);
     transition: border 300ms ease;
+}
+
+.LogInModal__log-in-button {
+    background-color: var(--color-blue) !important;
+    border: none !important;
+    color: var(--color-white) !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 20px !important;
+    height:40px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-top: 30px !important;
 }

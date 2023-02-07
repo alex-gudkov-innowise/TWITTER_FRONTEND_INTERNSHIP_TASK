@@ -3,8 +3,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import React, { useState } from 'react';
 
 import './auth-widget.css';
-import LogInModal from '../LogInModal/LogInModal';
-import SignUpModal from '../SignUpModal/SignUpModal';
+import LogInModal from '../log-in-modal/log-in-modal';
+import SignUpModal from '../sign-up-modal/sign-up-modal';
 
 function AuthWidget() {
     const [isVisibleSignUpModal, setVisibleSignUpModal] = useState(false);
