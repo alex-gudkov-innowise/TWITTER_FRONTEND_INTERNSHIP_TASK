@@ -2,7 +2,7 @@ import Twitter from '@mui/icons-material/Twitter';
 import React from 'react';
 
 import SignUpInfoList from './SignUpInfoList/SignUpInfoList';
-import SignUpWidget from './SignUpWidget/SignUpWidget';
+import SignUpWidget from './auth-widget/auth-widget';
 
 import './auth.css';
 
