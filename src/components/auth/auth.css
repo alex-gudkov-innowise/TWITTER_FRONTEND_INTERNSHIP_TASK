@@ -1,11 +1,11 @@
-.SignUp {
+.Auth {
     display: flex;
     flex-direction: row;
     height: 100vh;
     width: 100vw;
 }
 
-.SignUp__left {
+.Auth__left-container {
     flex: 0.5;
     display: flex;
     align-items: center;
@@ -20,14 +20,13 @@
     position: relative;
 }
 
-.SignUp__left__Image {
+.Auth__left-container__background {
     color: rgba(0, 0, 0, 0.15);
     position: absolute;
-    width: 150vw !important;
-    height: 150vw !important;
+    font-size: 135vh !important;
 }
 
-.SignUp__right {
+.Auth__right-container {
     flex: 0.5;
     display: flex;
     align-items: center;
