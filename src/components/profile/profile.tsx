@@ -2,7 +2,7 @@ import React from 'react';
 
 import './profile.css';
 import Sidebar from '../sidebar/sidebar';
-import Widgets from '../widgets/widgets';
+import Widgets from '../-Widgets/widgets';
 
 import ProfileFeed from './profile-feed/profile-feed';
 import ProfileHeader from './profile-header/profile-header';
