@@ -3,12 +3,14 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import React, { useState } from 'react';
 
 import './auth-widget.css';
+import ConfirmEmailModal from '../confirm-email-modal/confirm-email-modal';
 import LogInModal from '../log-in-modal/log-in-modal';
 import SignUpModal from '../sign-up-modal/sign-up-modal';
 
 function AuthWidget() {
     const [isVisibleSignUpModal, setVisibleSignUpModal] = useState(false);
     const [isVisibleLogInModal, setVisibleLogInModal] = useState(false);
+    const [isVisibleConfirmEmailModal, setVisibleConfirmEmailModal] = useState(true);
 
     return (
         <div className="AuthWidget">
@@ -42,6 +44,7 @@ function AuthWidget() {
 
                 <SignUpModal visible={isVisibleSignUpModal} setVisible={setVisibleSignUpModal} />
                 <LogInModal visible={isVisibleLogInModal} setVisible={setVisibleLogInModal} />
+                <ConfirmEmailModal visible={isVisibleConfirmEmailModal} setVisible={setVisibleConfirmEmailModal} />
             </div>
         </div>
     );

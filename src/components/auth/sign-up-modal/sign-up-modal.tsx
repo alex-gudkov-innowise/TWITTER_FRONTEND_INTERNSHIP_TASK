@@ -20,14 +20,16 @@ function SignUpModal({ setVisible, visible }: SignUpModalProps) {
                     <CloseIcon className="SignUpModal__close" onClick={closeSignUpModal} />
                     <h2 className="SignUpModal__title">Create an account</h2>
                 </div>
-                <form action="POST" className="SignUpModal__form">
-                    <input type="text" placeholder="name" className="SignUpModal__input" />
-                    <input type="text" placeholder="email" className="SignUpModal__input" />
-                    <input type="password" placeholder="password" className="SignUpModal__input" />
-                </form>
-                <Button variant="outlined" className="SignUpModal__sign-up-button">
-                    Sign Up
-                </Button>
+                <div className="SignUpModal__body">
+                    <form action="POST" className="SignUpModal__form">
+                        <input type="text" placeholder="name" className="SignUpModal__input" />
+                        <input type="text" placeholder="email" className="SignUpModal__input" />
+                        <input type="password" placeholder="password" className="SignUpModal__input" />
+                    </form>
+                    <Button variant="outlined" className="SignUpModal__sign-up-button">
+                        Sign Up
+                    </Button>
+                </div>
             </div>
         </div>
     );

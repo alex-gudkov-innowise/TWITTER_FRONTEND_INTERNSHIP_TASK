@@ -20,13 +20,15 @@ function LogInModal({ setVisible, visible }: LogInModalProps) {
                     <CloseIcon className="LogInModal__close" onClick={closeLogInModal} />
                     <h2 className="LogInModal__title">Log in to Twitter</h2>
                 </div>
-                <form action="POST" className="LogInModal__form">
-                    <input type="text" placeholder="email" className="LogInModal__input" />
-                    <input type="password" placeholder="password" className="LogInModal__input" />
-                </form>
-                <Button variant="outlined" className="LogInModal__log-in-button">
-                    Log In
-                </Button>
+                <div className="LogInModal__body">
+                    <form action="POST" className="LogInModal__form">
+                        <input type="text" placeholder="email" className="LogInModal__input" />
+                        <input type="password" placeholder="password" className="LogInModal__input" />
+                    </form>
+                    <Button variant="outlined" className="LogInModal__log-in-button">
+                        Log In
+                    </Button>
+                </div>
             </div>
         </div>
     );
