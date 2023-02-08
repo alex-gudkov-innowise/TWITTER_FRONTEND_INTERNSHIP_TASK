@@ -1,0 +1,4 @@
+.HomeFeed {
+    display: flex;
+    flex-direction: column;
+}

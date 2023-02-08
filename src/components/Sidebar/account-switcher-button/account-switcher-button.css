@@ -1,0 +1,53 @@
+.AccountSwitcherButton {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.AccountSwitcherButton:hover {
+    background-color: var(--color-gray);
+    transition: 300ms ease-out;
+    cursor: pointer;
+}
+
+.AccountSwitcherButton__body {
+    display: flex;
+    flex-direction: row;
+}
+
+.AccountSwitcherButton__user-avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.AccountSwitcherButton__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountSwitcherButton__user-name {
+    color: var(--color-white);
+    font-family: 'ChirpMedium';
+}
+
+.AccountSwitcherButton__user-nick {
+    color: var(--color-white-gray);
+    font-family: 'Chirp';
+}
+
+.Sidebar__account__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountSwitcherButton__more {
+    font-size: 25px !important;
+}
