@@ -18,7 +18,7 @@ function SignUpModal({ setVisible, visible }: SignUpModalProps) {
             <div className="SignUpModal__container" onClick={(event: BaseSyntheticEvent) => event.stopPropagation()}>
                 <div className="SignUpModal__header">
                     <CloseIcon className="SignUpModal__close" onClick={closeSignUpModal} />
-                    <h2 className="SignUpModal__title">Create an account</h2>
+                    <h1 className="SignUpModal__title">Create an account</h1>
                 </div>
                 <div className="SignUpModal__body">
                     <form action="POST" className="SignUpModal__form">

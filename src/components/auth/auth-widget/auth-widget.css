@@ -18,6 +18,8 @@
     margin-top: 20px;
     font-size: 15px;
     font-size: 30px;
+    font-family: 'ChirpMedium';
+    font-weight: normal;
     max-width: 300px;
 }
 
@@ -28,29 +30,33 @@
 
 .AuthWidget__subtitle {
     margin-top: 50px;
-
+    font-size: 20px;
+    font-family: 'Chirp';
+    font-weight: normal;
 }
 
 .AuthWidget__sign-up-button {
     background-color: var(--color-blue) !important;
     border: none !important;
     color: var(--color-white) !important;
-    font-weight: 900 !important;
     text-transform: inherit !important;
     border-radius: 20px !important;
     height: 40px !important;
     margin-top: 20px !important;
     width: 300px !important;
+    font-size: 16px !important;
+    font-family: 'ChirpMedium' !important;
 }
 
 .AuthWidget__log-in-button {
     background-color: var(--color-black) !important;
     border: 2px solid var(--color-blue) !important;
-    font-weight: 900 !important;
     text-transform: inherit !important;
     border-radius: 20px !important;
     height: 40px !important;
     margin-top: 20px !important;
     color: var(--color-blue) !important;
     width: 300px !important;
+    font-size: 16px !important;
+    font-family: 'ChirpMedium' !important;
 }
