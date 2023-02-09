@@ -28,35 +28,35 @@ function Sidebar({ activeElement }: SidebarProps) {
             <div className="Sidebar__body">
                 <TwitterIcon className="Sidebar__logo" />
 
-                <SidebarTab active={activeElement === 'Home'} Icon={HomeIcon}>
+                <SidebarTab linkTo={'/home'} active={activeElement === 'Home'} Icon={HomeIcon}>
                     Home
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Explore'} Icon={TagIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Explore'} Icon={TagIcon}>
                     Explore
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Notifications'} Icon={NotificationsNoneIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Notifications'} Icon={NotificationsNoneIcon}>
                     Notifications
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Messages'} Icon={MailOutlineIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Messages'} Icon={MailOutlineIcon}>
                     Messages
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Bookmarks'} Icon={BookmarkBorderIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Bookmarks'} Icon={BookmarkBorderIcon}>
                     Bookmarks
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Lists'} Icon={ListAltIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Lists'} Icon={ListAltIcon}>
                     Lists
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Profile'} Icon={PersonOutlineIcon}>
+                <SidebarTab linkTo={'/profile'} active={activeElement === 'Profile'} Icon={PersonOutlineIcon}>
                     Profile
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'More'} Icon={MoreHorizIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'More'} Icon={MoreHorizIcon}>
                     More
                 </SidebarTab>
 
