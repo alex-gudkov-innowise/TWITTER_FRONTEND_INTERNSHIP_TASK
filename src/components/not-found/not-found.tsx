@@ -1,8 +1,8 @@
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './not-found.css';
-import { Link, useNavigate } from 'react-router-dom';
 
 import Sidebar from '../sidebar/sidebar';
 import Widgets from '../widgets/widgets';

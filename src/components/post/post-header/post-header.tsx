@@ -16,9 +16,6 @@ function PostHeader({ record }: PostHeaderProps) {
                 <div className="Post__header__userName">
                     <span>{'Alex'}</span>
                 </div>
-                <div className="Post__header__userNick">
-                    <span>{'@alex423342'}</span>
-                </div>
                 <div className="Post__header__createdAt">
                     <span>{record.createdAt.toDateString()}</span>
                 </div>

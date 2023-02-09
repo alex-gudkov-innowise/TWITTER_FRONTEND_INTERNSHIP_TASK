@@ -20,7 +20,6 @@ function ProfileInfo() {
 
             <div className="ProfileInfo__body">
                 <span className="ProfileInfo__user-name">{user.name}</span>
-                <span className="ProfileInfo__user-nick">@{user.nick}</span>
                 <div className="ProfileInfo__joined-container">
                     <CalendarMonthIcon className="ProfileInfo__joined-icon" />
                     <span className="ProfileInfo__joined-date">Joined {user.createdAt.toDateString()}</span>

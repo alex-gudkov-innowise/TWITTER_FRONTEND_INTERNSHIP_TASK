@@ -13,10 +13,7 @@ function AccountSwitcherButton() {
                     alt="avatar"
                     className="AccountSwitcherButton__user-avatar"
                 />
-                <div className="AccountSwitcherButton__column">
-                    <span className="AccountSwitcherButton__user-name">{user.name}</span>
-                    <span className="AccountSwitcherButton__user-nick">@{user.nick}</span>
-                </div>
+                <span className="AccountSwitcherButton__user-name">{user.name}</span>
             </div>
             <MoreHorizIcon className="AccountSwitcherButton__more" />
         </div>

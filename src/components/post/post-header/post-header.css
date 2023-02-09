@@ -45,7 +45,7 @@
 
 .Post__header__more:hover {
     color: var(--color-blue);
-    transition: color 100ms ease-out;
+    transition: 300ms ease;
     background-color: var(--color-dark-blue);
     cursor: pointer;
 
