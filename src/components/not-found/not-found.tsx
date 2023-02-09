@@ -8,12 +8,18 @@ import Sidebar from '../sidebar/sidebar';
 import Widgets from '../widgets/widgets';
 
 function NotFound() {
+    const navigate = useNavigate();
+
+    function navigateToHome() {
+        navigate('/home');
+    }
+
     return (
         <div className="NotFound">
             <Sidebar activeElement="" />
             <div className="NotFound__container">
                 <div className="NotFound__header">
-                    <ArrowBackIcon className="NotFound__back-button" />
+                    <ArrowBackIcon className="NotFound__back-button" onClick={navigateToHome} />
                     <h1 className="NotFound__title">Page not found</h1>
                 </div>
                 <div className="NotFound__body">
