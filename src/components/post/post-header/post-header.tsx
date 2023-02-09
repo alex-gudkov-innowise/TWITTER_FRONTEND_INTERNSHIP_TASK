@@ -10,17 +10,17 @@ interface PostHeaderProps {
 
 function PostHeader({ record }: PostHeaderProps) {
     return (
-        <div className="Post__header">
-            <div className="Post__header__leftContainer">
-                <img src={require('../../../static/images/avatar.png')} alt="avatar" className="Post__header__avatar" />
-                <div className="Post__header__userName">
+        <div className="PostHeader">
+            <div className="PostHeader__body">
+                <img src={require('../../../static/images/avatar.png')} alt="avatar" className="PostHeader__avatar" />
+                <div className="PostHeader__user-name">
                     <span>{'Alex'}</span>
                 </div>
-                <div className="Post__header__createdAt">
+                <div className="PostHeader__created-at">
                     <span>{record.createdAt.toDateString()}</span>
                 </div>
             </div>
-            <MoreHorizIcon className="Post__header__more" />
+            <MoreHorizIcon className="PostHeader__more" />
         </div>
     );
 }

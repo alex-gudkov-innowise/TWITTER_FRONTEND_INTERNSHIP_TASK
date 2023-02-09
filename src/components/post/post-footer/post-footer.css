@@ -1,102 +1,98 @@
-.Post__footer {
+.PostFooter {
     margin-top: 5px;
     display: flex;
-    /* font-family: 'Chirp'; */
     justify-content: space-around;
     color: var(--color-white-gray);
+    font-family: 'Chirp';
+    font-weight: normal;
+    font-size: 15px;
 }
 
 /* comment */
-.Post__footer__comment {
+.PostFooter__comment {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
 }
 
-.Post__footer__comment__icon {
+.PostFooter__comment-icon {
     padding: 8px;
     border-radius: 20px;
     font-size: 22px !important;
     margin-right: 5px;
-/* background-color: red; */
 }
 
-.Post__footer__comment:hover {
+.PostFooter__comment:hover {
     color: var(--color-blue);
     transition: 300ms ease;
+    cursor: pointer;
 }
 
-.Post__footer__comment:hover .Post__footer__comment__icon {
+.PostFooter__comment:hover .PostFooter__comment-icon {
     background-color: var(--color-dark-blue);
     transition: 300ms ease;
 }
 
 /* retweet */
-.Post__footer__retweet {
+.PostFooter__retweet {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
 }
 
-.Post__footer__retweet__icon {
+.PostFooter__retweet-icon {
     font-size: 22px !important;
     padding: 8px;
     border-radius: 20px;
     margin-right: 5px;
 }
 
-.Post__footer__retweet:hover {
+.PostFooter__retweet:hover {
     color: var(--color-green);
     transition: 300ms ease;
+    cursor: pointer;
 }
 
-.Post__footer__retweet:hover .Post__footer__retweet__icon {
+.PostFooter__retweet:hover .PostFooter__retweet-icon {
     background-color: var(--color-dark-green);
     transition: 300ms ease;
 }
 
 /* like */
-.Post__footer__like {
+.PostFooter__like {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
 }
 
-.Post__footer__like__icon {
+.PostFooter__like-icon {
     padding: 8px;
     border-radius: 20px;
     font-size: 22px !important;
     margin-right: 5px;
 }
 
-.Post__footer__like:hover {
+.PostFooter__like:hover {
     color: var(--color-pink);
     transition: 300ms ease;
+    cursor: pointer;
 }
 
-.Post__footer__like:hover .Post__footer__like__icon {
+.PostFooter__like:hover .PostFooter__like-icon {
     background-color: var(--color-dark-pink);
     transition: 300ms ease;
 }
 
-
 /* share */
-.Post__footer__share__icon {
+.PostFooter__share-icon {
     padding: 8px;
     border-radius: 20px;
     font-size: 22px !important;
-    cursor: pointer;
 }
 
-.Post__footer__share__icon:hover {
+.PostFooter__share-icon:hover {
     color: var(--color-blue);
-    transition: 300ms ease;
-}
-
-.Post__footer__share__icon:hover {
     background-color: var(--color-dark-blue);
     transition: 300ms ease;
+    cursor: pointer;
 }

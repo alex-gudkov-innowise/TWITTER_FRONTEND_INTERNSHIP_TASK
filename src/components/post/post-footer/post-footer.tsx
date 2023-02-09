@@ -8,21 +8,21 @@ import './post-footer.css';
 
 function PostFooter() {
     return (
-        <div className="Post__footer">
-            <div className="Post__footer__comment">
-                <ChatBubbleOutlineIcon fontSize="small" className="Post__footer__comment__icon" />
+        <div className="PostFooter">
+            <div className="PostFooter__comment">
+                <ChatBubbleOutlineIcon fontSize="small" className="PostFooter__comment-icon" />
                 <span>12</span>
             </div>
-            <div className="Post__footer__retweet">
-                <RepeatIcon fontSize="small" className="Post__footer__retweet__icon" />
+            <div className="PostFooter__retweet">
+                <RepeatIcon fontSize="small" className="PostFooter__retweet-icon" />
                 <span>34</span>
             </div>
-            <div className="Post__footer__like">
-                <FavoriteBorderIcon fontSize="small" className="Post__footer__like__icon" />
+            <div className="PostFooter__like">
+                <FavoriteBorderIcon fontSize="small" className="PostFooter__like-icon" />
                 <span>67</span>
             </div>
-            <div className="Post__footer__share">
-                <IosShareIcon fontSize="small" className="Post__footer__share__icon" />
+            <div className="PostFooter__share">
+                <IosShareIcon fontSize="small" className="PostFooter__share-icon" />
             </div>
         </div>
     );

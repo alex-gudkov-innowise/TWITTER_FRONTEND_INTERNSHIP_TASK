@@ -10,14 +10,15 @@ interface PostBodyProps {
 
 function PostBody({ record }: PostBodyProps) {
     return (
-        <div className="Post__body">
-            <p>{record.text}</p>
-            <div className="Post__body__images">
+        <div className="PostBody">
+            <p className="PostBody__text">{record.text}</p>
+            <div className="PostBody__images-container">
                 {record.images.map((recordImage: RecordImagesEntity) => (
                     <img
                         src={require('../../../static/images/' + recordImage.name)}
-                        alt="recordImage"
+                        alt="record-image"
                         key={recordImage.id}
+                        className="PostBody__image"
                     />
                 ))}
             </div>
