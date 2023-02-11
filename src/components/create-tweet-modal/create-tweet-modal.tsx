@@ -7,6 +7,8 @@ import './create-tweet-modal.css';
 import { RequestOptions } from 'https';
 import axios from 'axios';
 
+import { baseUrl } from '../../constants/base-url';
+
 interface CreateTweetModalProps {
     setVisible?: any;
     visible: boolean;
@@ -18,20 +20,29 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
     }
 
     function createTweet() {
-        console.log('create tweet');
+        const requestUrl = baseUrl + '/feed/all';
+        const requestHeaders = new Headers();
 
-        const config = {
+        requestHeaders.append(
+            'Authorization',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMGFiZTIyOS1jN2I0LTQ3YjAtOGRiNi04Yzk3OWYxNDRmZTQiLCJ1c2VyUm9sZXMiOltdLCJpYXQiOjE2NzYxNDgyMDYsImV4cCI6MTY3NzAxMjIwNn0.IPjRHtGH3Yba7ImwTLqnlTGcECb5Yk2mYZw-UuCQcNc',
+        );
+
+        const requestOptions: RequestInit = {
             method: 'GET',
-            maxBodyLength: Infinity,
-            url: 'https://a4c1-146-120-15-114.eu.ngrok.io/feed/test',
+            headers: requestHeaders,
+            redirect: 'follow',
         };
 
-        axios(config)
-            .then(function (response: any) {
-                console.log(JSON.stringify(response.data));
+        fetch(requestUrl, requestOptions)
+            .then((response) => {
+                return response.text();
             })
-            .catch(function (error: any) {
-                console.log(error);
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log('error', error);
             });
     }
 
