@@ -4,7 +4,7 @@ import { UsersEntity } from './users.entity';
 export interface RecordsEntity {
     id: string;
     text: string;
-    createdAt: Date;
+    createdAt: string;
     isComment: boolean;
     isRetweet: boolean;
     isDeleted: boolean;

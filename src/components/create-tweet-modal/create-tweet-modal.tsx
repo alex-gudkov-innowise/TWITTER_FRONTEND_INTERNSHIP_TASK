@@ -4,11 +4,6 @@ import { Button } from '@mui/material';
 import React, { BaseSyntheticEvent } from 'react';
 import './create-tweet-modal.css';
 
-import { RequestOptions } from 'https';
-import axios from 'axios';
-
-import { baseUrl } from '../../constants/base-url';
-
 interface CreateTweetModalProps {
     setVisible?: any;
     visible: boolean;
@@ -17,33 +12,6 @@ interface CreateTweetModalProps {
 function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
     function closeCreateTweetModal() {
         setVisible(false);
-    }
-
-    function createTweet() {
-        const requestUrl = baseUrl + '/feed/all';
-        const requestHeaders = new Headers();
-
-        requestHeaders.append(
-            'Authorization',
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMGFiZTIyOS1jN2I0LTQ3YjAtOGRiNi04Yzk3OWYxNDRmZTQiLCJ1c2VyUm9sZXMiOltdLCJpYXQiOjE2NzYxNDgyMDYsImV4cCI6MTY3NzAxMjIwNn0.IPjRHtGH3Yba7ImwTLqnlTGcECb5Yk2mYZw-UuCQcNc',
-        );
-
-        const requestOptions: RequestInit = {
-            method: 'GET',
-            headers: requestHeaders,
-            redirect: 'follow',
-        };
-
-        fetch(requestUrl, requestOptions)
-            .then((response) => {
-                return response.text();
-            })
-            .then((result) => {
-                console.log(result);
-            })
-            .catch((error) => {
-                console.log('error', error);
-            });
     }
 
     return (
@@ -70,7 +38,7 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
 
                 <div className="CreateTweetModal__footer">
                     <CropOriginalIcon className="CreateTweetModal__attach-image" />
-                    <Button variant="outlined" className="CreateTweetModal__tweet-button" onClick={createTweet}>
+                    <Button variant="outlined" className="CreateTweetModal__tweet-button">
                         Tweet
                     </Button>
                 </div>

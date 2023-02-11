@@ -17,7 +17,7 @@ function PostHeader({ record }: PostHeaderProps) {
                     <span>{'Alex'}</span>
                 </div>
                 <div className="PostHeader__created-at">
-                    <span>{record.createdAt.toDateString()}</span>
+                    <span>{record.createdAt}</span>
                 </div>
             </div>
             <MoreHorizIcon className="PostHeader__more" />

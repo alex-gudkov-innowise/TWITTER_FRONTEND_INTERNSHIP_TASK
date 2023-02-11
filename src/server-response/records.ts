@@ -6,7 +6,7 @@ export const records: RecordsEntity[] = [
     {
         id: '1',
         text: 'Elon Musk works 25 hours a day',
-        createdAt: new Date(),
+        createdAt: '21-02-2023',
         isComment: false,
         isRetweet: false,
         isDeleted: false,
