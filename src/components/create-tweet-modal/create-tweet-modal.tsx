@@ -4,6 +4,9 @@ import { Button } from '@mui/material';
 import React, { BaseSyntheticEvent } from 'react';
 import './create-tweet-modal.css';
 
+import { RequestOptions } from 'https';
+import axios from 'axios';
+
 interface CreateTweetModalProps {
     setVisible?: any;
     visible: boolean;
@@ -12,6 +15,24 @@ interface CreateTweetModalProps {
 function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
     function closeCreateTweetModal() {
         setVisible(false);
+    }
+
+    function createTweet() {
+        console.log('create tweet');
+
+        const config = {
+            method: 'GET',
+            maxBodyLength: Infinity,
+            url: 'https://a4c1-146-120-15-114.eu.ngrok.io/feed/test',
+        };
+
+        axios(config)
+            .then(function (response: any) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error: any) {
+                console.log(error);
+            });
     }
 
     return (
@@ -38,7 +59,7 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
 
                 <div className="CreateTweetModal__footer">
                     <CropOriginalIcon className="CreateTweetModal__attach-image" />
-                    <Button variant="outlined" className="CreateTweetModal__tweet-button">
+                    <Button variant="outlined" className="CreateTweetModal__tweet-button" onClick={createTweet}>
                         Tweet
                     </Button>
                 </div>
