@@ -1,9 +1,9 @@
 import './post-header.css';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { formatDateString } from '../../../formatters/format-date-string';
+import { useNavigateTo } from '../../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../../interfaces/records.entity';
 
 interface PostHeaderProps {
@@ -11,11 +11,7 @@ interface PostHeaderProps {
 }
 
 function PostHeader({ record }: PostHeaderProps) {
-    const navigator = useNavigate();
-
-    function navigateToAuthor() {
-        navigator('/profile/' + record.author.id);
-    }
+    const navigateToAuthorProfile = useNavigateTo('/profile/' + record.author.id);
 
     return (
         <div className="PostHeader">
@@ -24,9 +20,9 @@ function PostHeader({ record }: PostHeaderProps) {
                     src={require('../../../static/images/avatar.png')}
                     alt="avatar"
                     className="PostHeader__avatar"
-                    onClick={navigateToAuthor}
+                    onClick={navigateToAuthorProfile}
                 />
-                <div className="PostHeader__user-name" onClick={navigateToAuthor}>
+                <div className="PostHeader__user-name" onClick={navigateToAuthorProfile}>
                     {record.author.name}
                 </div>
                 <div className="PostHeader__created-at">
