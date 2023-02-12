@@ -11,6 +11,7 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 
 import './sidebar.css';
+
 import CreateTweetModal from '../create-tweet-modal/create-tweet-modal';
 
 import AccountSwitcherButton from './account-switcher-button/account-switcher-button';
