@@ -1,10 +1,9 @@
+import './post-footer.css';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import React from 'react';
-
-import './post-footer.css';
 
 function PostFooter() {
     return (
