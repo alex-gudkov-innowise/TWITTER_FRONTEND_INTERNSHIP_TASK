@@ -7,16 +7,7 @@ import { UsersEntity } from '../../../interfaces/users.entity';
 import { UsersService } from '../../../services/users-service';
 
 function AccountSwitcherButton() {
-    const [currentUser, setCurrentUser] = useState<UsersEntity | undefined>();
-    const [fetchCurrentUser, isCurrentUserLoading] = useFetching(async () => {
-        const currentUser = await UsersService.getCurrentUser();
-
-        setCurrentUser(currentUser);
-    });
-
-    useEffect(() => {
-        fetchCurrentUser();
-    }, []);
+    const [currentUser, setCurrentUser] = useState<UsersEntity>(UsersService.getCurrentUser());
 
     return (
         <div className="AccountSwitcherButton">
@@ -26,7 +17,7 @@ function AccountSwitcherButton() {
                     alt="avatar"
                     className="AccountSwitcherButton__user-avatar"
                 />
-                <span className="AccountSwitcherButton__user-name">{currentUser?.name}</span>
+                <span className="AccountSwitcherButton__user-name">{currentUser.name}</span>
             </div>
 
             <MoreHorizIcon className="AccountSwitcherButton__more" />
