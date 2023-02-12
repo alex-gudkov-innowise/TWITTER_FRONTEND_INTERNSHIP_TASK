@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 
 import { useFetching } from '../../../hooks/use-fetch';
 import { RecordsEntity } from '../../../interfaces/records.entity';
-import { FeedService } from '../../../services/feed-service';
+import { TweetsService } from '../../../services/tweets-service';
 import Post from '../../post/post';
 
 function HomeFeed() {
     const [records, setRecords] = useState<RecordsEntity[]>([]);
     const [fetchAllFeed, isAllFeedLoading] = useFetching(async () => {
-        const records = await FeedService.getAllFeed();
+        const records = await TweetsService.getAllTweets();
 
         setRecords(records);
     });
