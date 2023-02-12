@@ -1,7 +1,7 @@
+import './post-header.css';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import React from 'react';
 
-import './post-header.css';
 import { formatDateString } from '../../../formatters/format-date-string';
 import { RecordsEntity } from '../../../interfaces/records.entity';
 
@@ -21,6 +21,7 @@ function PostHeader({ record }: PostHeaderProps) {
                     <span>{formatDateString(record.createdAt)}</span>
                 </div>
             </div>
+
             <MoreHorizIcon className="PostHeader__more" />
         </div>
     );

@@ -12,6 +12,7 @@ import React, { useState } from 'react';
 
 import './sidebar.css';
 
+import { UsersService } from '../../services/users-service';
 import CreateTweetModal from '../create-tweet-modal/create-tweet-modal';
 
 import AccountSwitcherButton from './account-switcher-button/account-switcher-button';
@@ -23,6 +24,7 @@ interface SidebarProps {
 
 function Sidebar({ activeElement }: SidebarProps) {
     const [isVisibleCreateTweetModal, setVisibleCreateTweetModal] = useState(false);
+    const currentUser = UsersService.getCurrentUser();
 
     return (
         <div className="Sidebar">
@@ -53,7 +55,11 @@ function Sidebar({ activeElement }: SidebarProps) {
                     Lists
                 </SidebarTab>
 
-                <SidebarTab linkTo={'/profile'} active={activeElement === 'Profile'} Icon={PersonOutlineIcon}>
+                <SidebarTab
+                    linkTo={'/profile/' + currentUser.id}
+                    active={activeElement === 'Profile'}
+                    Icon={PersonOutlineIcon}
+                >
                     Profile
                 </SidebarTab>
 
@@ -75,7 +81,7 @@ function Sidebar({ activeElement }: SidebarProps) {
                 <CreateTweetModal visible={isVisibleCreateTweetModal} setVisible={setVisibleCreateTweetModal} />
             </div>
 
-            <AccountSwitcherButton />
+            <AccountSwitcherButton currentUser={currentUser} />
         </div>
     );
 }

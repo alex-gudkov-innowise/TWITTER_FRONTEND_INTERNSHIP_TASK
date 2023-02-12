@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import './profile.css';
+import { useParams } from 'react-router-dom';
+
 import { useFetching } from '../../hooks/use-fetch';
 import { RecordsEntity } from '../../interfaces/records.entity';
 import { UsersService } from '../../services/users-service';
@@ -12,6 +14,7 @@ import ProfileHeader from './profile-header/profile-header';
 import ProfileInfo from './profile-info/profile-info';
 
 function Profile() {
+    const { userId } = useParams();
     const [records, setRecords] = useState<RecordsEntity[]>([]);
     const [fetchAllFeed, isAllFeedLoading] = useFetching(async () => {
         const currentUser = UsersService.getCurrentUser();

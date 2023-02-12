@@ -6,9 +6,11 @@ import { useFetching } from '../../../hooks/use-fetch';
 import { UsersEntity } from '../../../interfaces/users.entity';
 import { UsersService } from '../../../services/users-service';
 
-function AccountSwitcherButton() {
-    const [currentUser, setCurrentUser] = useState<UsersEntity>(UsersService.getCurrentUser());
+interface AccountSwitcherButtonProps {
+    currentUser: UsersEntity;
+}
 
+function AccountSwitcherButton({ currentUser }: AccountSwitcherButtonProps) {
     return (
         <div className="AccountSwitcherButton">
             <div className="AccountSwitcherButton__body">
