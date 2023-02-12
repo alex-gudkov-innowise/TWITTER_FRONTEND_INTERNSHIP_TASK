@@ -8,8 +8,8 @@ export interface RecordsEntity {
     isComment: boolean;
     isRetweet: boolean;
     isDeleted: boolean;
-    author: UsersEntity | null;
-    parent: RecordsEntity | null;
+    author: UsersEntity;
+    parent: RecordsEntity;
     images: RecordImagesEntity[];
     children?: RecordsEntity[];
 }
