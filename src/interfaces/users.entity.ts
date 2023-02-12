@@ -3,5 +3,4 @@ export interface UsersEntity {
     name: string;
     email: string;
     password: string;
-    createdAt: Date;
 }
