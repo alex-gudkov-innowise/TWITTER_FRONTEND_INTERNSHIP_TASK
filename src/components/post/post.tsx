@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { RecordsEntity } from '../../interfaces/records.entity';
+import { RecordsEntity } from '../../interfaces/records-entity';
 
 import PostBody from './post-body/post-body';
 import PostFooter from './post-footer/post-footer';

@@ -3,7 +3,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { UsersEntity } from '../../../interfaces/users.entity';
+import { UsersEntity } from '../../../interfaces/users-entity';
 
 interface ProfileHeaderProps {
     user: UsersEntity;

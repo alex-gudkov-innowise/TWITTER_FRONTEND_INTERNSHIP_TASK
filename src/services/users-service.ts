@@ -1,4 +1,4 @@
-import { UsersEntity } from '../interfaces/users.entity';
+import { UsersEntity } from '../interfaces/users-entity';
 
 import { LocalStorageService } from './local-storage-service';
 

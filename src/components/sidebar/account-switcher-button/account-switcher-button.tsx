@@ -1,10 +1,8 @@
 import './account-switcher-button.css';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import { useFetching } from '../../../hooks/use-fetch';
-import { UsersEntity } from '../../../interfaces/users.entity';
-import { UsersService } from '../../../services/users-service';
+import { UsersEntity } from '../../../interfaces/users-entity';
 
 interface AccountSwitcherButtonProps {
     currentUser: UsersEntity;

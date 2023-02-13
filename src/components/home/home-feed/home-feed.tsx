@@ -2,7 +2,7 @@ import './home-feed.css';
 import React, { useEffect, useState } from 'react';
 
 import { useFetching } from '../../../hooks/use-fetch';
-import { RecordsEntity } from '../../../interfaces/records.entity';
+import { RecordsEntity } from '../../../interfaces/records-entity';
 import { TweetsService } from '../../../services/tweets-service';
 import Post from '../../post/post';
 

@@ -2,7 +2,7 @@ import './profile-info.css';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import React from 'react';
 
-import { UsersEntity } from '../../../interfaces/users.entity';
+import { UsersEntity } from '../../../interfaces/users-entity';
 
 interface ProfileInfoProps {
     user: UsersEntity;

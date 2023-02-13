@@ -1,5 +1,5 @@
-import { RecordImagesEntity } from './record-images.entity';
-import { UsersEntity } from './users.entity';
+import { RecordImagesEntity } from './record-images-entity';
+import { UsersEntity } from './users-entity';
 
 export interface RecordsEntity {
     id: string;
