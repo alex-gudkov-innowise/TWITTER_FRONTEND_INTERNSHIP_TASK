@@ -1,10 +1,16 @@
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import React from 'react';
-
 import './account-switcher-button.css';
-import { user } from '../../../server-response/user';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import React, { useEffect, useState } from 'react';
 
-function AccountSwitcherButton() {
+import { useFetching } from '../../../hooks/use-fetch';
+import { UsersEntity } from '../../../interfaces/users.entity';
+import { UsersService } from '../../../services/users-service';
+
+interface AccountSwitcherButtonProps {
+    currentUser: UsersEntity;
+}
+
+function AccountSwitcherButton({ currentUser }: AccountSwitcherButtonProps) {
     return (
         <div className="AccountSwitcherButton">
             <div className="AccountSwitcherButton__body">
@@ -13,11 +19,9 @@ function AccountSwitcherButton() {
                     alt="avatar"
                     className="AccountSwitcherButton__user-avatar"
                 />
-                <div className="AccountSwitcherButton__column">
-                    <span className="AccountSwitcherButton__user-name">{user.name}</span>
-                    <span className="AccountSwitcherButton__user-nick">@{user.nick}</span>
-                </div>
+                <span className="AccountSwitcherButton__user-name">{currentUser.name}</span>
             </div>
+
             <MoreHorizIcon className="AccountSwitcherButton__more" />
         </div>
     );

@@ -2,10 +2,13 @@ import React from 'react';
 
 import './profile-feed.css';
 import { RecordsEntity } from '../../../interfaces/records.entity';
-import { records } from '../../../server-response/records';
 import Post from '../../post/post';
 
-function ProfileFeed() {
+interface ProfileFeedProps {
+    records: RecordsEntity[];
+}
+
+function ProfileFeed({ records }: ProfileFeedProps) {
     return (
         <div className="ProfileFeed">
             {records.map(

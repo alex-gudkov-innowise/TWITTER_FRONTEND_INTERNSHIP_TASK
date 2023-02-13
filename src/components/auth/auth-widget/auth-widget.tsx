@@ -10,7 +10,7 @@ import SignUpModal from '../sign-up-modal/sign-up-modal';
 function AuthWidget() {
     const [isVisibleSignUpModal, setVisibleSignUpModal] = useState(false);
     const [isVisibleLogInModal, setVisibleLogInModal] = useState(false);
-    const [isVisibleConfirmEmailModal, setVisibleConfirmEmailModal] = useState(true);
+    const [isVisibleConfirmEmailModal, setVisibleConfirmEmailModal] = useState(false);
 
     return (
         <div className="AuthWidget">

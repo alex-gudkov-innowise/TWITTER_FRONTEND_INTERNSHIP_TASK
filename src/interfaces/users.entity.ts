@@ -1,8 +1,6 @@
 export interface UsersEntity {
-    createdAt: Date;
-    email: string;
     id: string;
     name: string;
-    nick: string;
+    email: string;
     password: string;
 }

@@ -50,6 +50,8 @@
 .LogInModal__title {
     font-size: 18px;
     margin: 0;
+    font-family: 'ChirpMedium';
+    font-weight: normal;
 }
 
 .LogInModal__body {
@@ -89,11 +91,12 @@
     background-color: var(--color-blue) !important;
     border: none !important;
     color: var(--color-white) !important;
-    font-weight: 900 !important;
     text-transform: inherit !important;
     border-radius: 20px !important;
     height:40px !important;
     font-size: 16px !important;
     width: 80% !important;
     margin-top: 30px !important;
+    font-size: 16px !important;
+    font-family: 'ChirpMedium' !important;
 }

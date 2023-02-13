@@ -1,59 +1,51 @@
 
-.Post__header {
+.PostHeader {
     display: flex;
     justify-content: space-between;
 }
 
-.Post__header__leftContainer {
+.PostHeader__body {
     display: flex;
-    
 }
 
-.Post__header__avatar {
+.PostHeader__avatar {
     height: 50px;
     width: 50px;
     border-radius: 25px;
     cursor: pointer;
 }
 
-.Post__header__avatar:hover {
+.PostHeader__avatar:hover {
     opacity: 0.8;
 }
 
-.Post__header__userName {
+.PostHeader__user-name {
+    color: var(--color-white);
     font-family: 'ChirpMedium';
     margin-left: 10px;
 }
 
-.Post__header__userName:hover {
+.PostHeader__user-name:hover {
     cursor: pointer;
     text-decoration: underline;
 }
 
-.Post__header__userNick {
+.PostHeader__created-at {
     margin-left: 10px;
     color: var(--color-white-gray);
 }
 
-.Post__header__more {
+.PostHeader__more {
     color: var(--color-white-gray);
-
     font-size: 22px !important;
     padding: 8px;
     border-radius: 20px;
 }
 
-.Post__header__more:hover {
+.PostHeader__more:hover {
     color: var(--color-blue);
-    transition: color 100ms ease-out;
+    transition: 300ms ease;
     background-color: var(--color-dark-blue);
     cursor: pointer;
 
-}
-
-.Post__header__createdAt {
-    /* padding-top: 10px; */
-    margin-left: 10px;
-    /* font-family: 'Chirp'; */
-    color: var(--color-white-gray);
 }

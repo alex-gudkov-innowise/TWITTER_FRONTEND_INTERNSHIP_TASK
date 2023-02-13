@@ -25,15 +25,10 @@
     height: 40px;
     width: 40px;
     border-radius: 20px;
-    margin-right: 10px;
-}
-
-.AccountSwitcherButton__column {
-    display: flex;
-    flex-direction: column;
 }
 
 .AccountSwitcherButton__user-name {
+    margin-left: 10px;
     color: var(--color-white);
     font-family: 'ChirpMedium';
 }

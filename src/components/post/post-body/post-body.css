@@ -1,22 +1,24 @@
-.Post__body > p {
+.PostBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.PostBody__text {
     word-wrap: break-word;
     margin-top: 5px;
     margin-bottom: 0;
-    /* font-family: 'Chirp'; */
 }
 
-.Post__body__images > img {
-    /* width: 100%; */
+.PostBody__images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PostBody__image {
     margin-top: 10px;
     border-radius: 10px;
     border-bottom: 1px solid var(--color-border-gray);
     max-height: 400px;
     max-width: 100%;
-
-}
-
-.Post__body__images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }

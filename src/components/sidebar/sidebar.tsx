@@ -11,6 +11,8 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 
 import './sidebar.css';
+
+import { UsersService } from '../../services/users-service';
 import CreateTweetModal from '../create-tweet-modal/create-tweet-modal';
 
 import AccountSwitcherButton from './account-switcher-button/account-switcher-button';
@@ -22,41 +24,46 @@ interface SidebarProps {
 
 function Sidebar({ activeElement }: SidebarProps) {
     const [isVisibleCreateTweetModal, setVisibleCreateTweetModal] = useState(false);
+    const currentUser = UsersService.getCurrentUser();
 
     return (
         <div className="Sidebar">
             <div className="Sidebar__body">
                 <TwitterIcon className="Sidebar__logo" />
 
-                <SidebarTab active={activeElement === 'Home'} Icon={HomeIcon}>
+                <SidebarTab linkTo={'/home'} active={activeElement === 'Home'} Icon={HomeIcon}>
                     Home
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Explore'} Icon={TagIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Explore'} Icon={TagIcon}>
                     Explore
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Notifications'} Icon={NotificationsNoneIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Notifications'} Icon={NotificationsNoneIcon}>
                     Notifications
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Messages'} Icon={MailOutlineIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Messages'} Icon={MailOutlineIcon}>
                     Messages
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Bookmarks'} Icon={BookmarkBorderIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Bookmarks'} Icon={BookmarkBorderIcon}>
                     Bookmarks
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Lists'} Icon={ListAltIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'Lists'} Icon={ListAltIcon}>
                     Lists
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'Profile'} Icon={PersonOutlineIcon}>
+                <SidebarTab
+                    linkTo={'/profile/' + currentUser.id}
+                    active={activeElement === 'Profile'}
+                    Icon={PersonOutlineIcon}
+                >
                     Profile
                 </SidebarTab>
 
-                <SidebarTab active={activeElement === 'More'} Icon={MoreHorizIcon}>
+                <SidebarTab linkTo={'/'} active={activeElement === 'More'} Icon={MoreHorizIcon}>
                     More
                 </SidebarTab>
 
@@ -74,7 +81,7 @@ function Sidebar({ activeElement }: SidebarProps) {
                 <CreateTweetModal visible={isVisibleCreateTweetModal} setVisible={setVisibleCreateTweetModal} />
             </div>
 
-            <AccountSwitcherButton />
+            <AccountSwitcherButton currentUser={currentUser} />
         </div>
     );
 }

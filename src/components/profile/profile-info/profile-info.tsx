@@ -1,10 +1,14 @@
+import './profile-info.css';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import React from 'react';
 
-import './profile-info.css';
-import { user } from '../../../server-response/user';
+import { UsersEntity } from '../../../interfaces/users.entity';
 
-function ProfileInfo() {
+interface ProfileInfoProps {
+    user: UsersEntity;
+}
+
+function ProfileInfo({ user }: ProfileInfoProps) {
     return (
         <div className="ProfileInfo">
             <div
@@ -20,10 +24,9 @@ function ProfileInfo() {
 
             <div className="ProfileInfo__body">
                 <span className="ProfileInfo__user-name">{user.name}</span>
-                <span className="ProfileInfo__user-nick">@{user.nick}</span>
                 <div className="ProfileInfo__joined-container">
                     <CalendarMonthIcon className="ProfileInfo__joined-icon" />
-                    <span className="ProfileInfo__joined-date">Joined {user.createdAt.toDateString()}</span>
+                    <span className="ProfileInfo__joined-date">Joined {'12-03-11'}</span>
                 </div>
                 <div className="ProfileInfo__following-and-followers">
                     <div className="ProfileInfo__following">
