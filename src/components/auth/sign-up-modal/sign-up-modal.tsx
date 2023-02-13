@@ -11,9 +11,10 @@ import { LocalStorageService } from '../../../services/local-storage-service';
 interface SignUpModalProps {
     setVisible?: any;
     visible: boolean;
+    showConfirmEmailModal: any;
 }
 
-function SignUpModal({ setVisible, visible }: SignUpModalProps) {
+function SignUpModal({ setVisible, showConfirmEmailModal, visible }: SignUpModalProps) {
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
@@ -36,15 +37,19 @@ function SignUpModal({ setVisible, visible }: SignUpModalProps) {
     }
 
     async function signUpUser() {
+        setErrorMessage('');
+
         try {
             const userEntityWithJwtPair = await AuthService.signUpUser(userName, userEmail, userPassword);
+
+            showConfirmEmailModal();
         } catch (error) {
             if (error instanceof AxiosError) {
                 const responseErrorMessage: string = error.response?.data.message;
 
                 setErrorMessage(responseErrorMessage.charAt(0).toUpperCase() + responseErrorMessage.slice(1) + '.');
             } else {
-                setErrorMessage('Sign up error');
+                setErrorMessage('Sign up error.');
             }
         }
     }

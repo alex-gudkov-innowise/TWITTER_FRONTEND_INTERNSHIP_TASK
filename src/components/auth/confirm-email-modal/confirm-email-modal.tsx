@@ -1,7 +1,7 @@
+import './confirm-email-modal.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from '@mui/material';
 import React, { BaseSyntheticEvent } from 'react';
-import './confirm-email-modal.css';
 
 interface ConfirmEmailModalProps {
     setVisible?: any;
