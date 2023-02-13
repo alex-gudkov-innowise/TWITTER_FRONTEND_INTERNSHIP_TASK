@@ -42,7 +42,7 @@ function SignUpModal({ setVisible, visible }: SignUpModalProps) {
             if (error instanceof AxiosError) {
                 const responseErrorMessage: string = error.response?.data.message;
 
-                setErrorMessage(responseErrorMessage);
+                setErrorMessage(responseErrorMessage.charAt(0).toUpperCase() + responseErrorMessage.slice(1) + '.');
             } else {
                 setErrorMessage('Sign up error');
             }

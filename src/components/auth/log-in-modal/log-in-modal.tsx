@@ -44,7 +44,7 @@ function LogInModal({ setVisible, visible }: LogInModalProps) {
             if (error instanceof AxiosError) {
                 const responseErrorMessage: string = error.response?.data.message;
 
-                setErrorMessage(responseErrorMessage);
+                setErrorMessage(responseErrorMessage.charAt(0).toUpperCase() + responseErrorMessage.slice(1) + '.');
             } else {
                 setErrorMessage('Log on error.');
             }
