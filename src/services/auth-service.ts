@@ -28,4 +28,24 @@ export class AuthService {
 
         return userEntityWithJwtPair;
     }
+
+    public static async signUpUser(userName: string, userEmail: string, userPassword: string) {
+        const data = JSON.stringify({
+            name: userName,
+            email: userEmail,
+            password: userPassword,
+        });
+
+        const requestConfig = {
+            method: 'POST',
+            maxBodyLength: Infinity,
+            url: baseUrl + '/auth/sign-up',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            data,
+        };
+
+        await axios(requestConfig);
+    }
 }

@@ -1,9 +1,7 @@
 import './log-in-modal.css';
-import { LoginTwoTone } from '@mui/icons-material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from '@mui/material';
 import { AxiosError } from 'axios';
-import { log } from 'console';
 import React, { BaseSyntheticEvent, useState } from 'react';
 
 import { useNavigateTo } from '../../../hooks/use-navigate-to';
@@ -76,7 +74,7 @@ function LogInModal({ setVisible, visible }: LogInModalProps) {
                             placeholder="password"
                             className="LogInModal__input"
                         />
-                        <div className="LogInModal__error-message">{errorMessage}</div>
+                        <span className="LogInModal__error-message">{errorMessage}</span>
                     </form>
                     <Button variant="outlined" className="LogInModal__log-in-button" onClick={logInUser}>
                         Log In
