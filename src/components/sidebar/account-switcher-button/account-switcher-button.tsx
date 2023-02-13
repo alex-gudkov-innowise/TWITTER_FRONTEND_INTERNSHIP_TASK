@@ -1,6 +1,6 @@
 import './account-switcher-button.css';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import React, { useEffect, useState } from 'react';
+import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
 
 import { useFetching } from '../../../hooks/use-fetch';
 import { UsersEntity } from '../../../interfaces/users.entity';
@@ -11,8 +11,18 @@ interface AccountSwitcherButtonProps {
 }
 
 function AccountSwitcherButton({ currentUser }: AccountSwitcherButtonProps) {
+    const [isVisibleAccountSwitcherMenu, setVisibleAccountSwitcherMenu] = useState(false);
+
+    function showAccountSwitcherMenu() {
+        setVisibleAccountSwitcherMenu(!isVisibleAccountSwitcherMenu);
+    }
+
+    function logOutUser() {
+        console.log('Log out');
+    }
+
     return (
-        <div className="AccountSwitcherButton">
+        <div className="AccountSwitcherButton" onClick={showAccountSwitcherMenu}>
             <div className="AccountSwitcherButton__body">
                 <img
                     src={require('../../../static/images/avatar.png')}
@@ -23,6 +33,18 @@ function AccountSwitcherButton({ currentUser }: AccountSwitcherButtonProps) {
             </div>
 
             <MoreHorizIcon className="AccountSwitcherButton__more" />
+
+            <div
+                className={
+                    isVisibleAccountSwitcherMenu
+                        ? 'AccountSwitcherMenu AccountSwitcherMenu_active'
+                        : 'AccountSwitcherMenu'
+                }
+            >
+                <div className="AccountSwitcherMenu__log-out" onClick={logOutUser}>
+                    Log out
+                </div>
+            </div>
         </div>
     );
 }
