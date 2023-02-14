@@ -33,11 +33,11 @@ export class LocalStorageService {
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
     }
 
-    public static getCurrentUser(): UsersEntity {
+    public static getCurrentUser(): UsersEntity | null {
         const currentUserString: string | null = localStorage.getItem('currentUser');
 
         if (!currentUserString) {
-            throw new Error('current user not found');
+            return null;
         }
 
         return JSON.parse(currentUserString);

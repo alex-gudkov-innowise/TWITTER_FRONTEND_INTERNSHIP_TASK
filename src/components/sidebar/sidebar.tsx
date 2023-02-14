@@ -8,10 +8,13 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import TagIcon from '@mui/icons-material/Tag';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { Button } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './sidebar.css';
 
+import { useNavigateTo } from '../../hooks/use-navigate-to';
+import { UsersEntity } from '../../interfaces/users-entity';
+import { LocalStorageService } from '../../services/local-storage-service';
 import { UsersService } from '../../services/users-service';
 import CreateTweetModal from '../create-tweet-modal/create-tweet-modal';
 
@@ -24,7 +27,13 @@ interface SidebarProps {
 
 function Sidebar({ activeElement }: SidebarProps) {
     const [isVisibleCreateTweetModal, setVisibleCreateTweetModal] = useState(false);
-    const currentUser = UsersService.getCurrentUser();
+    const navigateToAuth = useNavigateTo('/auth');
+    const currentUser = LocalStorageService.getCurrentUser();
+    if (!currentUser) {
+        navigateToAuth();
+
+        return <div className="Sidebar"></div>;
+    }
 
     return (
         <div className="Sidebar">

@@ -69,4 +69,22 @@ export class AuthService {
 
         return userEntityWithJwtPair;
     }
+
+    public static async logOutUser() {
+        const data = JSON.stringify({
+            refreshToken: LocalStorageService.getRefreshToken(),
+        });
+
+        const requestConfig = {
+            method: 'POST',
+            maxBodyLength: Infinity,
+            url: baseUrl + '/auth/sign-out',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            data,
+        };
+
+        const response = await axios(requestConfig);
+    }
 }
