@@ -48,4 +48,25 @@ export class AuthService {
 
         await axios(requestConfig);
     }
+
+    public static async confirmUserEmail(verificationCode: string): Promise<UserEntityWithJwtPair> {
+        const data = JSON.stringify({
+            value: verificationCode,
+        });
+
+        const requestConfig = {
+            method: 'POST',
+            maxBodyLength: Infinity,
+            url: baseUrl + '/auth/confirm-email',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            data,
+        };
+
+        const response = await axios(requestConfig);
+        const userEntityWithJwtPair: UserEntityWithJwtPair = response.data;
+
+        return userEntityWithJwtPair;
+    }
 }
