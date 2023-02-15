@@ -12,6 +12,10 @@ function AuthWidget() {
     const [isVisibleLogInModal, setVisibleLogInModal] = useState(false);
     const [isVisibleConfirmEmailModal, setVisibleConfirmEmailModal] = useState(false);
 
+    function showConfirmEmailModal() {
+        setVisibleConfirmEmailModal(true);
+    }
+
     return (
         <div className="AuthWidget">
             <div className="AuthWidget__header">
@@ -42,7 +46,11 @@ function AuthWidget() {
                     Log in
                 </Button>
 
-                <SignUpModal visible={isVisibleSignUpModal} setVisible={setVisibleSignUpModal} />
+                <SignUpModal
+                    visible={isVisibleSignUpModal}
+                    setVisible={setVisibleSignUpModal}
+                    showConfirmEmailModal={showConfirmEmailModal}
+                />
                 <LogInModal visible={isVisibleLogInModal} setVisible={setVisibleLogInModal} />
                 <ConfirmEmailModal visible={isVisibleConfirmEmailModal} setVisible={setVisibleConfirmEmailModal} />
             </div>

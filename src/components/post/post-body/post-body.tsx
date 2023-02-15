@@ -2,8 +2,8 @@ import React from 'react';
 
 import './post-body.css';
 import { baseUrl } from '../../../constants/base-url';
-import { RecordImagesEntity } from '../../../interfaces/record-images.entity';
-import { RecordsEntity } from '../../../interfaces/records.entity';
+import { RecordImagesEntity } from '../../../interfaces/record-images-entity';
+import { RecordsEntity } from '../../../interfaces/records-entity';
 
 interface PostBodyProps {
     record: RecordsEntity;

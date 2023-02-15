@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
 import { baseUrl } from '../constants/base-url';
-import { RecordsEntity } from '../interfaces/records.entity';
+import { RecordsEntity } from '../interfaces/records-entity';
 
 import { LocalStorageService } from './local-storage-service';
 
@@ -13,7 +13,7 @@ export class TweetsService {
             maxBodyLength: Infinity,
             url: requestUrl,
             headers: {
-                Authorization: LocalStorageService.getAuthorization(),
+                Authorization: 'Bearer ' + LocalStorageService.getAccessToken(),
             },
         };
         const response = await axios(requestConfig);
@@ -29,7 +29,7 @@ export class TweetsService {
             maxBodyLength: Infinity,
             url: requestUrl,
             headers: {
-                Authorization: LocalStorageService.getAuthorization(),
+                Authorization: 'Bearer ' + LocalStorageService.getAccessToken(),
             },
         };
         const response = await axios(requestConfig);

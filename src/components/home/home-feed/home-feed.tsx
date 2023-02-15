@@ -1,17 +1,24 @@
 import './home-feed.css';
+import { AxiosError } from 'axios';
 import React, { useEffect, useState } from 'react';
 
 import { useFetching } from '../../../hooks/use-fetch';
-import { RecordsEntity } from '../../../interfaces/records.entity';
+import { useNavigateTo } from '../../../hooks/use-navigate-to';
+import { RecordsEntity } from '../../../interfaces/records-entity';
 import { TweetsService } from '../../../services/tweets-service';
 import Post from '../../post/post';
 
 function HomeFeed() {
     const [records, setRecords] = useState<RecordsEntity[]>([]);
+    const navigateToAuth = useNavigateTo('/auth');
     const [fetchAllFeed, isAllFeedLoading] = useFetching(async () => {
-        const records = await TweetsService.getAllTweets();
+        try {
+            const records = await TweetsService.getAllTweets();
 
-        setRecords(records);
+            setRecords(records);
+        } catch (error) {
+            navigateToAuth();
+        }
     });
 
     useEffect(() => {

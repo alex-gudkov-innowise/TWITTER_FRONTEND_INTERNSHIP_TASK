@@ -4,7 +4,7 @@ import React from 'react';
 
 import { formatDateString } from '../../../formatters/format-date-string';
 import { useNavigateTo } from '../../../hooks/use-navigate-to';
-import { RecordsEntity } from '../../../interfaces/records.entity';
+import { RecordsEntity } from '../../../interfaces/records-entity';
 
 interface PostHeaderProps {
     record: RecordsEntity;
