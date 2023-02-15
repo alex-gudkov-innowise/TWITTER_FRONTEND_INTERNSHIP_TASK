@@ -19,7 +19,7 @@ function Post({ record }: PostProps) {
         <div className="Post" onClick={navigateToRecordId}>
             <PostHeader record={record} />
             <PostBody record={record} />
-            <PostFooter />
+            <PostFooter record={record} />
         </div>
     );
 }
