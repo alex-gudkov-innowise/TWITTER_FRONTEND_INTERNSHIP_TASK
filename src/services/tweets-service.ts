@@ -38,13 +38,13 @@ export class TweetsService {
         return records;
     }
 
-    public static createTweet(text: string, imageFiles: any[]): Promise<AxiosResponse> {
+    public static createTweet(text: string, imageFiles: File[]) {
         const requestUrl = baseUrl + '/tweets';
         const formData = new FormData();
 
         formData.append('text', text);
 
-        imageFiles.forEach((imageFile) => {
+        imageFiles.forEach((imageFile: File) => {
             formData.append('imageFiles', imageFile, imageFile.name);
         });
 
@@ -54,6 +54,7 @@ export class TweetsService {
             url: requestUrl,
             headers: {
                 Authorization: 'Bearer ' + LocalStorageService.getAccessToken(),
+                'Content-Type': 'multipart/form-data',
             },
             data: formData,
         };

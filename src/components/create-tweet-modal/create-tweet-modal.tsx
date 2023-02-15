@@ -14,7 +14,7 @@ interface CreateTweetModalProps {
 
 function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
     const [tweetText, setTweetText] = useState<string>('');
-    const [tweetImageFiles, setTweetImageFiles] = useState<Array<any>>([]);
+    const [tweetImageFiles, setTweetImageFiles] = useState<File[]>([]);
     const [fetchCreateTweet, isCreateTweetLoading, errorMessage] = useFetching(async () => {
         await TweetsService.createTweet(tweetText, tweetImageFiles);
     });
@@ -32,7 +32,7 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
     }
 
     function changeFilesInput(event: BaseSyntheticEvent) {
-        setTweetImageFiles(Array(event.target.files));
+        setTweetImageFiles(Array.from(event.target.files));
     }
 
     return (
