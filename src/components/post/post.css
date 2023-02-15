@@ -9,4 +9,5 @@
 .Post:hover {
     transition: 300ms ease;
     background-color: var(--color-dark-gray);
+    cursor: pointer;
 }
