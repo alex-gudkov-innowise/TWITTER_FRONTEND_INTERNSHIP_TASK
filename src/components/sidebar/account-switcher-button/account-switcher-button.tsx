@@ -2,13 +2,17 @@ import './account-switcher-button.css';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import React, { useState } from 'react';
 
+import { useNavigateTo } from '../../../hooks/use-navigate-to';
 import { UsersEntity } from '../../../interfaces/users-entity';
+import { AuthService } from '../../../services/auth-service';
+import { LocalStorageService } from '../../../services/local-storage-service';
 
 interface AccountSwitcherButtonProps {
     currentUser: UsersEntity;
 }
 
 function AccountSwitcherButton({ currentUser }: AccountSwitcherButtonProps) {
+    const navigateToAuth = useNavigateTo('/auth');
     const [isVisibleAccountSwitcherMenu, setVisibleAccountSwitcherMenu] = useState(false);
 
     function showAccountSwitcherMenu() {
@@ -16,7 +20,13 @@ function AccountSwitcherButton({ currentUser }: AccountSwitcherButtonProps) {
     }
 
     function logOutUser() {
-        console.log('Log out');
+        AuthService.logOutUser();
+
+        LocalStorageService.removeCurrentUser();
+        LocalStorageService.removeAccessToken();
+        LocalStorageService.removeRefreshToken();
+
+        navigateToAuth();
     }
 
     return (

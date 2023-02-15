@@ -42,4 +42,16 @@ export class LocalStorageService {
 
         return JSON.parse(currentUserString);
     }
+
+    public static removeCurrentUser(): void {
+        localStorage.removeItem('currentUser');
+    }
+
+    public static removeAccessToken(): void {
+        localStorage.removeItem('accessToken');
+    }
+
+    public static removeRefreshToken(): void {
+        localStorage.removeItem('refreshToken');
+    }
 }
