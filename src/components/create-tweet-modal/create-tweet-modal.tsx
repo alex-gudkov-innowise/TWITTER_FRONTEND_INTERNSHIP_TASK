@@ -1,7 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import CropOriginalIcon from '@mui/icons-material/CropOriginal';
 import { Button } from '@mui/material';
-import React, { BaseSyntheticEvent } from 'react';
+import React, { BaseSyntheticEvent, useState } from 'react';
 import './create-tweet-modal.css';
 
 interface CreateTweetModalProps {
@@ -10,8 +10,24 @@ interface CreateTweetModalProps {
 }
 
 function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
+    const [tweetText, setTweetText] = useState<string>('');
+    const [selectedFiles, setSelectedFiles] = useState<any[]>([]);
+
     function closeCreateTweetModal() {
         setVisible(false);
+    }
+
+    function changeTweetText(event: BaseSyntheticEvent) {
+        setTweetText(event.target.value);
+    }
+
+    function createTweet() {
+        console.log('text:', tweetText);
+        console.log('files:', selectedFiles);
+    }
+
+    function changeFilesInput(event: BaseSyntheticEvent) {
+        setSelectedFiles(event.target.files);
     }
 
     return (
@@ -33,12 +49,19 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
                 </div>
 
                 <div className="CreateTweetModal__body">
-                    <textarea className="CreateTweetModal__input" placeholder="What's happening?" maxLength={320} />
+                    <textarea
+                        value={tweetText}
+                        onChange={changeTweetText}
+                        className="CreateTweetModal__input"
+                        placeholder="What's happening?"
+                        maxLength={320}
+                    />
                 </div>
 
                 <div className="CreateTweetModal__footer">
-                    <CropOriginalIcon className="CreateTweetModal__attach-image" />
-                    <Button variant="outlined" className="CreateTweetModal__tweet-button">
+                    {/* <CropOriginalIcon className="CreateTweetModal__attach-image" /> */}
+                    <input type="file" onChange={changeFilesInput} accept="image/*" multiple />
+                    <Button variant="outlined" className="CreateTweetModal__tweet-button" onClick={createTweet}>
                         Tweet
                     </Button>
                 </div>
