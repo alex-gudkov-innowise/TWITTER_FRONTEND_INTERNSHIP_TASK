@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { baseUrl } from '../constants/base-url';
 import { RecordsEntity } from '../interfaces/records-entity';
@@ -36,5 +36,28 @@ export class TweetsService {
         const records: RecordsEntity[] = response.data;
 
         return records;
+    }
+
+    public static createTweet(text: string, imageFiles: any[]): Promise<AxiosResponse> {
+        const requestUrl = baseUrl + '/tweets';
+        const formData = new FormData();
+
+        formData.append('text', text);
+
+        imageFiles.forEach((imageFile) => {
+            formData.append('imageFiles', imageFile, imageFile.name);
+        });
+
+        const requestConfig: AxiosRequestConfig<FormData> = {
+            method: 'POST',
+            maxBodyLength: Infinity,
+            url: requestUrl,
+            headers: {
+                Authorization: 'Bearer ' + LocalStorageService.getAccessToken(),
+            },
+            data: formData,
+        };
+
+        return axios(requestConfig);
     }
 }
