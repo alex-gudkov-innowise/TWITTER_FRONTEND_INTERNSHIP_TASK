@@ -1,8 +1,11 @@
+import './create-tweet-modal.css';
 import CloseIcon from '@mui/icons-material/Close';
 import CropOriginalIcon from '@mui/icons-material/CropOriginal';
 import { Button } from '@mui/material';
 import React, { BaseSyntheticEvent, useState } from 'react';
-import './create-tweet-modal.css';
+
+import { useFetching } from '../../hooks/use-fetch';
+import { TweetsService } from '../../services/tweets-service';
 
 interface CreateTweetModalProps {
     setVisible?: any;
@@ -11,7 +14,10 @@ interface CreateTweetModalProps {
 
 function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
     const [tweetText, setTweetText] = useState<string>('');
-    const [selectedFiles, setSelectedFiles] = useState<any[]>([]);
+    const [tweetImageFiles, setTweetImageFiles] = useState<Array<any>>([]);
+    const [fetchCreateTweet, isCreateTweetLoading, errorMessage] = useFetching(async () => {
+        await TweetsService.createTweet(tweetText, tweetImageFiles);
+    });
 
     function closeCreateTweetModal() {
         setVisible(false);
@@ -22,12 +28,11 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
     }
 
     function createTweet() {
-        console.log('text:', tweetText);
-        console.log('files:', selectedFiles);
+        fetchCreateTweet();
     }
 
     function changeFilesInput(event: BaseSyntheticEvent) {
-        setSelectedFiles(event.target.files);
+        setTweetImageFiles(Array(event.target.files));
     }
 
     return (
@@ -56,6 +61,11 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
                         placeholder="What's happening?"
                         maxLength={320}
                     />
+                    {isCreateTweetLoading ? (
+                        <span>loading...</span>
+                    ) : (
+                        <span className="CreateTweetModal__error-message">{errorMessage}</span>
+                    )}
                 </div>
 
                 <div className="CreateTweetModal__footer">
