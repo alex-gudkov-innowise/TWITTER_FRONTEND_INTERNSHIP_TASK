@@ -5,6 +5,7 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
 
+import { PostFooterInfo } from '../../../interfaces/post-footer-info';
 import { RecordsEntity } from '../../../interfaces/records-entity';
 import { CommentsService } from '../../../services/comments-service';
 import CreateCommentModal from '../../create-comment-modal/create-comment-modal';
@@ -15,17 +16,22 @@ interface PostFooterProps {
 
 function PostFooter({ record }: PostFooterProps) {
     const [isVisibleCreateCommentModal, setVisibleCreateCommentModal] = useState(false);
-    const [commentsCount, setCommentsCount] = useState<number>(0);
-    const [retweetsCount, setRetweetsCount] = useState<number>(0);
-    const [likesCount, setLikesCount] = useState<number>(0);
+    const [postFooterInfo, setPostFooterInfo] = useState<PostFooterInfo>({
+        commentsCount: 0,
+        retweetsCount: 0,
+        likesCount: 0,
+    });
 
     async function loadFooterInfo() {
         try {
             const commentsCount = await CommentsService.getRecordCommentsCount(record.id);
 
-            setCommentsCount(commentsCount.commentsCount);
+            setPostFooterInfo({
+                ...postFooterInfo,
+                commentsCount: commentsCount.commentsCount,
+            });
         } catch (error) {
-            console.error(error);
+            // console.error(error);
         }
     }
 
@@ -55,15 +61,15 @@ function PostFooter({ record }: PostFooterProps) {
         <div className="PostFooter">
             <div className="PostFooter__comment" onClick={showCreateCommentModal}>
                 <ChatBubbleOutlineIcon fontSize="small" className="PostFooter__comment-icon" />
-                <span>{commentsCount ? commentsCount : ''}</span>
+                <span>{postFooterInfo.commentsCount ? postFooterInfo.commentsCount : ''}</span>
             </div>
             <div className="PostFooter__retweet" onClick={showCreateRetweetModal}>
                 <RepeatIcon fontSize="small" className="PostFooter__retweet-icon" />
-                <span>{retweetsCount ? retweetsCount : ''}</span>
+                <span>{postFooterInfo.retweetsCount ? postFooterInfo.retweetsCount : ''}</span>
             </div>
             <div className="PostFooter__like" onClick={createLikeOnRecord}>
                 <FavoriteBorderIcon fontSize="small" className="PostFooter__like-icon" />
-                <span>{likesCount ? likesCount : ''}</span>
+                <span>{postFooterInfo.likesCount ? postFooterInfo.likesCount : ''}</span>
             </div>
             <div className="PostFooter__share">
                 <IosShareIcon fontSize="small" className="PostFooter__share-icon" onClick={showShareRecordModal} />
