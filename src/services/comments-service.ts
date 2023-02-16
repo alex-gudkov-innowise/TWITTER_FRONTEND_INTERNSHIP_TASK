@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { baseUrl } from '../constants/base-url';
+import { CommentsCount } from '../interfaces/comments-count.interface';
 
 import { LocalStorageService } from './local-storage-service';
 
@@ -27,5 +28,21 @@ export class CommentsService {
         };
 
         return axios(requestConfig);
+    }
+
+    public static async getRecordCommentsCount(recordId: string): Promise<CommentsCount> {
+        const requestUrl = baseUrl + '/comments/count/record/' + recordId;
+        const requestConfig: AxiosRequestConfig = {
+            method: 'GET',
+            maxBodyLength: Infinity,
+            url: requestUrl,
+            headers: {
+                Authorization: 'Bearer ' + LocalStorageService.getAccessToken(),
+            },
+        };
+        const response = await axios(requestConfig);
+        const commentsCount: CommentsCount = response.data;
+
+        return commentsCount;
     }
 }

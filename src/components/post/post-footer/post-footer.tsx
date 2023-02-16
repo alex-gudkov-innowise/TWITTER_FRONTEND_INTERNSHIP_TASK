@@ -6,6 +6,7 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
 
 import { RecordsEntity } from '../../../interfaces/records-entity';
+import { CommentsService } from '../../../services/comments-service';
 import CreateCommentModal from '../../create-comment-modal/create-comment-modal';
 
 interface PostFooterProps {
@@ -17,6 +18,20 @@ function PostFooter({ record }: PostFooterProps) {
     const [commentsCount, setCommentsCount] = useState<number>(0);
     const [retweetsCount, setRetweetsCount] = useState<number>(0);
     const [likesCount, setLikesCount] = useState<number>(0);
+
+    async function loadFooterInfo() {
+        try {
+            const commentsCount = await CommentsService.getRecordCommentsCount(record.id);
+
+            setCommentsCount(commentsCount.commentsCount);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        loadFooterInfo();
+    }, []);
 
     function showCreateCommentModal(event: BaseSyntheticEvent) {
         event.stopPropagation();
