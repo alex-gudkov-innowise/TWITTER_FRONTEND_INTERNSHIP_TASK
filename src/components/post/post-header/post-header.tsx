@@ -2,6 +2,7 @@ import './post-header.css';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import React from 'react';
 
+import { baseUrl } from '../../../constants/base-url';
 import { formatDateString } from '../../../formatters/format-date-string';
 import { useNavigateTo } from '../../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../../interfaces/records-entity';
@@ -17,7 +18,7 @@ function PostHeader({ record }: PostHeaderProps) {
         <div className="PostHeader">
             <div className="PostHeader__body">
                 <img
-                    src={require('../../../static/images/avatar.png')}
+                    src={baseUrl + '/default-user-profile-images/' + 'default-user-avatar.png'}
                     alt="avatar"
                     className="PostHeader__avatar"
                     onClick={navigateToAuthorProfile}
