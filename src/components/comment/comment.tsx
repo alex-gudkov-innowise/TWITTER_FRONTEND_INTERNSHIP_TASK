@@ -4,8 +4,7 @@ import React from 'react';
 import { RecordsEntity } from '../../interfaces/records-entity';
 import PostBody from '../post/post-body/post-body';
 import PostFooter from '../post/post-footer/post-footer';
-
-import CommentHeader from './comment-header/comment-header';
+import PostHeader from '../post/post-header/post-header';
 
 interface CommentProps {
     record: RecordsEntity;
@@ -14,7 +13,8 @@ interface CommentProps {
 function Comment({ record }: CommentProps) {
     return (
         <div className="Comment">
-            <CommentHeader record={record} />
+            <PostHeader record={record} />
+            <span className="CreateCommentModal__replying-to">Replying to{record.author.name}</span>
             <PostBody record={record} />
             <PostFooter record={record} />
         </div>

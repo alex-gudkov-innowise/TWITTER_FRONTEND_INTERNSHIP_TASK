@@ -14,6 +14,9 @@ interface PostFooterProps {
 
 function PostFooter({ record }: PostFooterProps) {
     const [isVisibleCreateCommentModal, setVisibleCreateCommentModal] = useState(false);
+    const postCommentsCount = 0;
+    const postRetweetsCount = 0;
+    const postLikesCount = 0;
 
     function showCreateCommentModal(event: BaseSyntheticEvent) {
         event.stopPropagation();
@@ -21,22 +24,34 @@ function PostFooter({ record }: PostFooterProps) {
         setVisibleCreateCommentModal(true);
     }
 
+    function showCreateRetweetModal(event: BaseSyntheticEvent) {
+        event.stopPropagation();
+    }
+
+    function createLikeOnRecord(event: BaseSyntheticEvent) {
+        event.stopPropagation();
+    }
+
+    function showShareRecordModal(event: BaseSyntheticEvent) {
+        event.stopPropagation();
+    }
+
     return (
         <div className="PostFooter">
             <div className="PostFooter__comment" onClick={showCreateCommentModal}>
                 <ChatBubbleOutlineIcon fontSize="small" className="PostFooter__comment-icon" />
-                <span>12</span>
+                <span>{postCommentsCount ? postCommentsCount : ''}</span>
             </div>
-            <div className="PostFooter__retweet">
+            <div className="PostFooter__retweet" onClick={showCreateRetweetModal}>
                 <RepeatIcon fontSize="small" className="PostFooter__retweet-icon" />
-                <span>34</span>
+                <span>{postRetweetsCount ? postRetweetsCount : ''}</span>
             </div>
-            <div className="PostFooter__like">
+            <div className="PostFooter__like" onClick={createLikeOnRecord}>
                 <FavoriteBorderIcon fontSize="small" className="PostFooter__like-icon" />
-                <span>67</span>
+                <span>{postLikesCount ? postLikesCount : ''}</span>
             </div>
             <div className="PostFooter__share">
-                <IosShareIcon fontSize="small" className="PostFooter__share-icon" />
+                <IosShareIcon fontSize="small" className="PostFooter__share-icon" onClick={showShareRecordModal} />
             </div>
 
             <CreateCommentModal
