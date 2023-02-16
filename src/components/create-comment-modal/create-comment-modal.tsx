@@ -25,7 +25,8 @@ function CreateCommentModal({
         await CommentsService.createComment(parentRecord.id, commentText, commentImageFiles);
     });
 
-    function closeCreateCommentModal() {
+    function closeCreateCommentModal(event: BaseSyntheticEvent) {
+        event.stopPropagation();
         setVisibleCreateCommentModal(false);
     }
 

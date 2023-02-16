@@ -7,6 +7,7 @@ import { useFetching } from '../../hooks/use-fetch';
 import { useNavigateTo } from '../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../interfaces/records-entity';
 import { RecordsService } from '../../services/records-service';
+import Comment from '../comment/comment';
 import Post from '../post/post';
 import Sidebar from '../sidebar/sidebar';
 import Widgets from '../widgets/widgets';
@@ -14,10 +15,13 @@ import Widgets from '../widgets/widgets';
 function RecordPage() {
     const { recordId = '' } = useParams<string>();
     const [record, setRecord] = useState<RecordsEntity>();
+    const [recordComments, setRecordComments] = useState<RecordsEntity[]>([]);
     const [fetchRecord, isRecordLoading] = useFetching(async () => {
         const record = await RecordsService.getRecordById(recordId);
+        const recordComments = await RecordsService.getRecordComments(recordId);
 
         setRecord(record);
+        setRecordComments(recordComments);
     });
     const navigateToHome = useNavigateTo('/home');
 
@@ -34,6 +38,13 @@ function RecordPage() {
                     <h1 className="RecordPage__title">Tweet</h1>
                 </div>
                 {record ? <Post record={record} /> : ''}
+                <div className="RecordPage__comments-container">
+                    {recordComments.map(
+                        (comment: RecordsEntity): JSX.Element => (
+                            <Comment record={comment} key={comment.id} />
+                        ),
+                    )}
+                </div>
             </div>
             <Widgets />
         </div>

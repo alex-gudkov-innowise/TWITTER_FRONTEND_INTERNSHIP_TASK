@@ -40,10 +40,12 @@ function SignUpModal({ setVisible, showConfirmEmailModal, visible }: SignUpModal
         setErrorMessage('');
 
         try {
-            const userEntityWithJwtPair = await AuthService.signUpUser(userName, userEmail, userPassword);
+            await AuthService.signUpUser(userName, userEmail, userPassword);
 
             showConfirmEmailModal();
         } catch (error) {
+            console.log('ERR:', error);
+
             if (error instanceof AxiosError) {
                 const responseErrorMessage: string = error.response?.data.message;
 

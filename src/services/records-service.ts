@@ -21,4 +21,20 @@ export class RecordsService {
 
         return record;
     }
+
+    public static async getRecordComments(recordId: string): Promise<RecordsEntity[]> {
+        const requestUrl = baseUrl + '/comments/upper-lever/record/' + recordId;
+        const requestConfig: AxiosRequestConfig = {
+            method: 'GET',
+            maxBodyLength: Infinity,
+            url: requestUrl,
+            headers: {
+                Authorization: 'Bearer ' + LocalStorageService.getAccessToken(),
+            },
+        };
+        const response = await axios(requestConfig);
+        const recordComments: RecordsEntity[] = response.data;
+
+        return recordComments;
+    }
 }

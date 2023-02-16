@@ -71,3 +71,8 @@
     font-family: 'Chirp';
     color: var(--color-white-gray);
 }
+
+.RecordPage__comments-container {
+    display: flex;
+    flex-direction: column;
+}
