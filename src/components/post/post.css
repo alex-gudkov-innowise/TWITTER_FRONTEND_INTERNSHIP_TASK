@@ -6,8 +6,8 @@
     width: 100%;
 }
 
-.Post:hover {
+.Post_hoverable:hover {
+    cursor: pointer;
     transition: 300ms ease;
     background-color: var(--color-dark-gray);
-    cursor: pointer;
 }

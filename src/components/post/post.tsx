@@ -1,5 +1,6 @@
 import './post.css';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useNavigateTo } from '../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../interfaces/records-entity';
@@ -10,13 +11,24 @@ import PostHeader from './post-header/post-header';
 
 interface PostProps {
     record: RecordsEntity;
+    isClickable?: boolean;
 }
 
-function Post({ record }: PostProps) {
-    const navigateToRecordId = useNavigateTo('/record/' + record.id);
+function Post({ isClickable = true, record }: PostProps): JSX.Element {
+    const navigate = useNavigate();
+
+    function navigateToRecordId() {
+        navigate('/record/' + record.id);
+    }
+
+    function PostOnClick() {
+        if (isClickable) {
+            navigateToRecordId();
+        }
+    }
 
     return (
-        <div className="Post" onClick={navigateToRecordId}>
+        <div className={isClickable ? 'Post Post_hoverable' : 'Post'} onClick={PostOnClick}>
             <PostHeader record={record} />
             <PostBody record={record} />
             <PostFooter record={record} />

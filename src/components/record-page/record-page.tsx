@@ -40,7 +40,7 @@ function RecordPage() {
                     <ArrowBackIcon className="RecordPage__back-button" onClick={navigateBack} />
                     <h1 className="RecordPage__title">Tweet</h1>
                 </div>
-                {record ? <Post record={record} /> : ''}
+                {record ? <Post isClickable={false} record={record} /> : ''}
                 <div className="RecordPage__comments-container">
                     <div className="RecordPage__comments-header">
                         <span className="RecordPage__comments-title">Comments:</span>
