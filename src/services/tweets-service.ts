@@ -6,8 +6,13 @@ import { RecordsEntity } from '../interfaces/records-entity';
 import { LocalStorageService } from './local-storage-service';
 
 export class TweetsService {
-    public static async getAllTweets(): Promise<RecordsEntity[]> {
-        const requestUrl = baseUrl + '/tweets/all';
+    public static async getPaginatedAllTweets(page: number, limit: number): Promise<RecordsEntity[]> {
+        const searchParams = new URLSearchParams();
+
+        searchParams.append('page', page.toString());
+        searchParams.append('limit', limit.toString());
+
+        const requestUrl = baseUrl + '/tweets/all/paginate?' + searchParams.toString();
         const requestConfig: AxiosRequestConfig = {
             method: 'GET',
             maxBodyLength: Infinity,
@@ -59,6 +64,6 @@ export class TweetsService {
             data: formData,
         };
 
-        return axios(requestConfig);
+        axios(requestConfig);
     }
 }

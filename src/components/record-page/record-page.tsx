@@ -39,6 +39,9 @@ function RecordPage() {
                 </div>
                 {record ? <Post record={record} /> : ''}
                 <div className="RecordPage__comments-container">
+                    <div className="RecordPage__comments-header">
+                        <span className="RecordPage__comments-title">Comments:</span>
+                    </div>
                     {recordComments.map(
                         (comment: RecordsEntity): JSX.Element => (
                             <Comment record={comment} key={comment.id} />
