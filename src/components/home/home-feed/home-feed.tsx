@@ -2,6 +2,7 @@ import './home-feed.css';
 import { AxiosError } from 'axios';
 import React, { useEffect, useState } from 'react';
 
+import { eventEmitter } from '../../../event-emiter/event-emiter';
 import { useFetching } from '../../../hooks/use-fetch';
 import { useNavigateTo } from '../../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../../interfaces/records-entity';
@@ -25,6 +26,8 @@ function HomeFeed() {
 
     useEffect(() => {
         fetchAllFeed();
+
+        eventEmitter.addListener('create-tweet', fetchAllFeed);
     }, []);
 
     async function viewMoreTweets() {

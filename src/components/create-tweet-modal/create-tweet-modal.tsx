@@ -2,9 +2,11 @@ import './create-tweet-modal.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from '@mui/material';
 import { AxiosError } from 'axios';
+import EventEmitter from 'events';
 import React, { BaseSyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { eventEmitter } from '../../event-emiter/event-emiter';
 import { TweetsService } from '../../services/tweets-service';
 
 interface CreateTweetModalProps {
@@ -26,6 +28,11 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
             const tweet = await TweetsService.createTweet(tweetText, tweetImageFiles);
 
             // setRecords([...records, tweet]);
+
+            setTweetText('');
+            setTweetImageFiles([]);
+            closeCreateTweetModal();
+            eventEmitter.emit('create-tweet');
         } catch (error) {
             if (error instanceof AxiosError) {
                 if (error.response?.status == 401) {
@@ -57,9 +64,6 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
 
     function tweetButtonOnClick() {
         createTweet();
-        setTweetText('');
-        setTweetImageFiles([]);
-        closeCreateTweetModal();
     }
 
     function changeFilesInput(event: BaseSyntheticEvent) {
