@@ -43,7 +43,7 @@ export class TweetsService {
         return records;
     }
 
-    public static createTweet(text: string, imageFiles: File[]) {
+    public static async createTweet(text: string, imageFiles: File[]): Promise<RecordsEntity> {
         const requestUrl = baseUrl + '/tweets';
         const formData = new FormData();
 
@@ -64,6 +64,9 @@ export class TweetsService {
             data: formData,
         };
 
-        axios(requestConfig);
+        const response = await axios(requestConfig);
+        const tweet: RecordsEntity = response.data;
+
+        return tweet;
     }
 }
