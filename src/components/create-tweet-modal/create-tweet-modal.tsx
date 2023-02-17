@@ -25,9 +25,7 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
         try {
             setIsCreateTweetLoading(true);
 
-            const tweet = await TweetsService.createTweet(tweetText, tweetImageFiles);
-
-            // setRecords([...records, tweet]);
+            await TweetsService.createTweet(tweetText, tweetImageFiles);
 
             setTweetText('');
             setTweetImageFiles([]);

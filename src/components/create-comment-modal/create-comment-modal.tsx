@@ -2,11 +2,15 @@ import './create-comment-modal.css';
 import CloseIcon from '@mui/icons-material/Close';
 import CropOriginalIcon from '@mui/icons-material/CropOriginal';
 import { Button } from '@mui/material';
+import { AxiosError } from 'axios';
 import React, { BaseSyntheticEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { eventEmitter } from '../../event-emiter/event-emiter';
 import { useFetching } from '../../hooks/use-fetch';
 import { RecordsEntity } from '../../interfaces/records-entity';
 import { CommentsService } from '../../services/comments-service';
+import { TweetsService } from '../../services/tweets-service';
 
 interface CreateCommentModalProps {
     parentRecord: RecordsEntity;
@@ -21,12 +25,45 @@ function CreateCommentModal({
 }: CreateCommentModalProps) {
     const [commentText, setCommentText] = useState<string>('');
     const [commentImageFiles, setCommentImageFiles] = useState<File[]>([]);
-    const [fetchCreateComment, isCreateCommentLoading, errorMessage] = useFetching(async () => {
-        await CommentsService.createComment(parentRecord.id, commentText, commentImageFiles);
-    });
+    const [isCreateCommentLoading, setIsCreateCommentLoading] = useState<boolean>(false);
+    const [errorMessage, setErrorMessage] = useState<string>('');
+    const navigate = useNavigate();
+
+    async function createComment() {
+        try {
+            setIsCreateCommentLoading(true);
+
+            await CommentsService.createComment(parentRecord.id, commentText, commentImageFiles);
+
+            setCommentText('');
+            setCommentImageFiles([]);
+            setVisibleCreateCommentModal(false);
+
+            eventEmitter.emit('create-comment');
+        } catch (error) {
+            if (error instanceof AxiosError) {
+                if (error.response?.status == 401) {
+                    navigate('/home');
+                } else {
+                    const responseErrorMessage: string = error.response?.data.message;
+
+                    if (responseErrorMessage) {
+                        setErrorMessage(
+                            responseErrorMessage.charAt(0).toUpperCase() + responseErrorMessage.slice(1) + '.',
+                        );
+                    } else {
+                        setErrorMessage('Error creating tweet.');
+                    }
+                }
+            }
+        } finally {
+            setIsCreateCommentLoading(false);
+        }
+    }
 
     function closeCreateCommentModal(event: BaseSyntheticEvent) {
         event.stopPropagation();
+
         setVisibleCreateCommentModal(false);
     }
 
@@ -34,8 +71,8 @@ function CreateCommentModal({
         setCommentText(event.target.value);
     }
 
-    function createComment() {
-        fetchCreateComment();
+    function commentButtonOnClick() {
+        createComment();
     }
 
     function changeFilesInput(event: BaseSyntheticEvent) {
@@ -81,7 +118,11 @@ function CreateCommentModal({
                 <div className="CreateCommentModal__footer">
                     {/* <CropOriginalIcon className="CreateCommentModal__attach-image" /> */}
                     <input type="file" onChange={changeFilesInput} accept="image/*" multiple />
-                    <Button variant="outlined" className="CreateCommentModal__comment-button" onClick={createComment}>
+                    <Button
+                        variant="outlined"
+                        className="CreateCommentModal__comment-button"
+                        onClick={commentButtonOnClick}
+                    >
                         Comment
                     </Button>
                 </div>
