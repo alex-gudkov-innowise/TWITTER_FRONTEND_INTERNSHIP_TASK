@@ -1,9 +1,10 @@
 import './post-header.css';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import React from 'react';
+import React, { BaseSyntheticEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { baseUrl } from '../../../constants/base-url';
 import { formatDateString } from '../../../formatters/format-date-string';
-import { useNavigateTo } from '../../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../../interfaces/records-entity';
 
 interface PostHeaderProps {
@@ -11,13 +12,18 @@ interface PostHeaderProps {
 }
 
 function PostHeader({ record }: PostHeaderProps) {
-    const navigateToAuthorProfile = useNavigateTo('/profile/' + record.author.id);
+    const navigate = useNavigate();
+
+    function navigateToAuthorProfile(event: BaseSyntheticEvent) {
+        event.stopPropagation();
+        navigate('/profile/' + record.author.id);
+    }
 
     return (
         <div className="PostHeader">
             <div className="PostHeader__body">
                 <img
-                    src={require('../../../static/images/avatar.png')}
+                    src={baseUrl + '/default-user-profile-images/' + 'default-user-avatar.png'}
                     alt="avatar"
                     className="PostHeader__avatar"
                     onClick={navigateToAuthorProfile}

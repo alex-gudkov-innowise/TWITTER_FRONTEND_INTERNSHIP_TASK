@@ -6,6 +6,7 @@ import Auth from './components/auth/auth';
 import Home from './components/home/home';
 import NotFound from './components/not-found/not-found';
 import Profile from './components/profile/profile';
+import RecordPage from './components/record-page/record-page';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Routes>
                     <Route path="/home" element={<Home />} />
                     <Route path="/profile/:userId" element={<Profile />} />
+                    <Route path="/record/:recordId" element={<RecordPage />} />
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/*" element={<NotFound />} />
                 </Routes>
