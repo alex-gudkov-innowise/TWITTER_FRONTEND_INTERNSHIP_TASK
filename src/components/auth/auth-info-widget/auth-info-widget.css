@@ -1,6 +1,8 @@
 .AuthInfoWidget {
     display: flex;
     flex-direction: column;
+    font-family: 'Chirp';
+    font-weight: normal;
 }
 
 .AuthInfoWidget__element {

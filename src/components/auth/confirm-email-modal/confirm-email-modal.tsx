@@ -1,7 +1,12 @@
+import './confirm-email-modal.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from '@mui/material';
-import React, { BaseSyntheticEvent } from 'react';
-import './confirm-email-modal.css';
+import { AxiosError } from 'axios';
+import React, { BaseSyntheticEvent, useState } from 'react';
+
+import { useNavigateTo } from '../../../hooks/use-navigate-to';
+import { AuthService } from '../../../services/auth-service';
+import { LocalStorageService } from '../../../services/local-storage-service';
 
 interface ConfirmEmailModalProps {
     setVisible?: any;
@@ -9,8 +14,36 @@ interface ConfirmEmailModalProps {
 }
 
 function ConfirmEmailModal({ setVisible, visible }: ConfirmEmailModalProps) {
+    const [verificationCode, setVerificationCode] = useState<string>('');
+    const navigateToHome = useNavigateTo('/home');
+    const [errorMessage, setErrorMessage] = useState('');
+
     function closeConfirmEmailModal() {
         setVisible(false);
+    }
+
+    function changeVerificationCode(event: BaseSyntheticEvent) {
+        setVerificationCode(event.target.value);
+    }
+
+    async function confirmUserEmail() {
+        try {
+            const userEntityWithJwtPair = await AuthService.confirmUserEmail(verificationCode);
+
+            LocalStorageService.setCurrentUser(userEntityWithJwtPair.user);
+            LocalStorageService.setAccessToken(userEntityWithJwtPair.accessToken);
+            LocalStorageService.setRefreshToken(userEntityWithJwtPair.refreshToken);
+
+            navigateToHome();
+        } catch (error) {
+            if (error instanceof AxiosError) {
+                const responseErrorMessage: string = error.response?.data.message;
+
+                setErrorMessage(responseErrorMessage.charAt(0).toUpperCase() + responseErrorMessage.slice(1) + '.');
+            } else {
+                setErrorMessage('Log in error.');
+            }
+        }
     }
 
     return (
@@ -31,9 +64,16 @@ function ConfirmEmailModal({ setVisible, visible }: ConfirmEmailModalProps) {
                         <span className="ConfirmEmailModal__text">
                             We just sent a verification code to your email. Enter that code below.
                         </span>
-                        <input type="text" placeholder="code" className="ConfirmEmailModal__input" />
+                        <input
+                            value={verificationCode}
+                            onChange={changeVerificationCode}
+                            type="text"
+                            placeholder="code"
+                            className="ConfirmEmailModal__input"
+                        />
+                        <span className="ConfirmEmailModal__error-message">{errorMessage}</span>
                     </form>
-                    <Button variant="outlined" className="ConfirmEmailModal__sign-up-button">
+                    <Button variant="outlined" className="ConfirmEmailModal__sign-up-button" onClick={confirmUserEmail}>
                         Submit
                     </Button>
                 </div>

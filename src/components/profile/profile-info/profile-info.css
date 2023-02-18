@@ -40,11 +40,6 @@
     font-size: 20px;
     font-family: 'ChirpMedium';
 }
-
-.ProfileInfo__user-nick {
-    color: var(--color-white-gray);
-}
-
 .ProfileInfo__joined-container {
     margin-top: 10px;
     display: flex;

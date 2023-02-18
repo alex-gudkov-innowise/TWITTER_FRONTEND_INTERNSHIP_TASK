@@ -10,16 +10,10 @@
     },
     "overrides": [
         {
-          "files": ["*.jsx", "*.js, *.tsx", "*.ts"]
+            "files": ["*.jsx", "*.js, *.tsx", "*.ts"]
         }
     ],
-    "plugins": [
-        "react",
-        "import",
-        "@typescript-eslint/eslint-plugin",
-        "typescript-sort-keys",
-        "sort-destructure-keys"
-    ],
+    "plugins": ["react", "import", "@typescript-eslint/eslint-plugin", "typescript-sort-keys", "sort-destructure-keys"],
     "extends": [
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
@@ -56,7 +50,7 @@
         "@typescript-eslint/no-explicit-any": "off",
         "arrow-parens": ["warn", "always"],
         "sort-destructure-keys/sort-destructure-keys": 2,
-        "typescript-sort-keys/interface": "warn",
+        "typescript-sort-keys/interface": "off",
         "typescript-sort-keys/string-enum": "warn",
         "import/order": [
             "warn",

@@ -1,8 +1,13 @@
-import CloseIcon from '@mui/icons-material/Close';
-import CropOriginalIcon from '@mui/icons-material/CropOriginal';
-import { Button } from '@mui/material';
-import React, { BaseSyntheticEvent } from 'react';
 import './create-tweet-modal.css';
+import CloseIcon from '@mui/icons-material/Close';
+import { Button } from '@mui/material';
+import { AxiosError } from 'axios';
+import EventEmitter from 'events';
+import React, { BaseSyntheticEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { eventEmitter } from '../../event-emiter/event-emiter';
+import { TweetsService } from '../../services/tweets-service';
 
 interface CreateTweetModalProps {
     setVisible?: any;
@@ -10,8 +15,57 @@ interface CreateTweetModalProps {
 }
 
 function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
+    const [tweetText, setTweetText] = useState<string>('');
+    const [tweetImageFiles, setTweetImageFiles] = useState<File[]>([]);
+    const [isCreateTweetLoading, setIsCreateTweetLoading] = useState<boolean>(false);
+    const [errorMessage, setErrorMessage] = useState<string>('');
+    const navigate = useNavigate();
+
+    async function createTweet() {
+        try {
+            setIsCreateTweetLoading(true);
+
+            await TweetsService.createTweet(tweetText, tweetImageFiles);
+
+            setTweetText('');
+            setTweetImageFiles([]);
+            closeCreateTweetModal();
+            eventEmitter.emit('create-tweet');
+        } catch (error) {
+            if (error instanceof AxiosError) {
+                if (error.response?.status == 401) {
+                    navigate('/home');
+                } else {
+                    const responseErrorMessage: string = error.response?.data.message;
+
+                    if (responseErrorMessage) {
+                        setErrorMessage(
+                            responseErrorMessage.charAt(0).toUpperCase() + responseErrorMessage.slice(1) + '.',
+                        );
+                    } else {
+                        setErrorMessage('Error creating tweet.');
+                    }
+                }
+            }
+        } finally {
+            setIsCreateTweetLoading(false);
+        }
+    }
+
     function closeCreateTweetModal() {
         setVisible(false);
+    }
+
+    function changeTweetText(event: BaseSyntheticEvent) {
+        setTweetText(event.target.value);
+    }
+
+    function tweetButtonOnClick() {
+        createTweet();
+    }
+
+    function changeFilesInput(event: BaseSyntheticEvent) {
+        setTweetImageFiles(Array.from(event.target.files));
     }
 
     return (
@@ -33,12 +87,24 @@ function CreateTweetModal({ setVisible, visible }: CreateTweetModalProps) {
                 </div>
 
                 <div className="CreateTweetModal__body">
-                    <textarea className="CreateTweetModal__input" placeholder="What's happening?" maxLength={320} />
+                    <textarea
+                        value={tweetText}
+                        onChange={changeTweetText}
+                        className="CreateTweetModal__input"
+                        placeholder="What's happening?"
+                        maxLength={320}
+                    />
+                    {isCreateTweetLoading ? (
+                        <span className="CreateTweetModal__create-loading">Loading...</span>
+                    ) : (
+                        <span className="CreateTweetModal__error-message">{errorMessage}</span>
+                    )}
                 </div>
 
                 <div className="CreateTweetModal__footer">
-                    <CropOriginalIcon className="CreateTweetModal__attach-image" />
-                    <Button variant="outlined" className="CreateTweetModal__tweet-button">
+                    {/* <CropOriginalIcon className="CreateTweetModal__attach-image" /> */}
+                    <input type="file" onChange={changeFilesInput} accept="image/*" multiple />
+                    <Button variant="outlined" className="CreateTweetModal__tweet-button" onClick={tweetButtonOnClick}>
                         Tweet
                     </Button>
                 </div>
