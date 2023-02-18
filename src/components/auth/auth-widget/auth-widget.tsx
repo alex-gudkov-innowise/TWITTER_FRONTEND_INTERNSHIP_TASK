@@ -1,19 +1,27 @@
+import './auth-widget.css';
 import { Button } from '@material-ui/core';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import React, { useState } from 'react';
 
-import './auth-widget.css';
 import ConfirmEmailModal from '../confirm-email-modal/confirm-email-modal';
 import LogInModal from '../log-in-modal/log-in-modal';
 import SignUpModal from '../sign-up-modal/sign-up-modal';
 
 function AuthWidget() {
-    const [isVisibleSignUpModal, setVisibleSignUpModal] = useState(false);
-    const [isVisibleLogInModal, setVisibleLogInModal] = useState(false);
-    const [isVisibleConfirmEmailModal, setVisibleConfirmEmailModal] = useState(false);
+    const [isVisibleSignUpModal, setIsVisibleSignUpModal] = useState(false);
+    const [isVisibleLogInModal, setIsVisibleLogInModal] = useState(false);
+    const [isVisibleConfirmEmailModal, setIsVisibleConfirmEmailModal] = useState(false);
 
     function showConfirmEmailModal() {
-        setVisibleConfirmEmailModal(true);
+        setIsVisibleConfirmEmailModal(true);
+    }
+
+    function signUpButtonOnClick() {
+        setIsVisibleSignUpModal(true);
+    }
+
+    function logInButtonOnClick() {
+        setIsVisibleLogInModal(true);
     }
 
     return (
@@ -29,30 +37,24 @@ function AuthWidget() {
                     variant="outlined"
                     className="AuthWidget__sign-up-button"
                     fullWidth
-                    onClick={() => {
-                        setVisibleSignUpModal(true);
-                    }}
+                    onClick={signUpButtonOnClick}
                 >
                     Sign Up
                 </Button>
-                <Button
-                    variant="outlined"
-                    className="AuthWidget__log-in-button"
-                    fullWidth
-                    onClick={() => {
-                        setVisibleLogInModal(true);
-                    }}
-                >
+                <Button variant="outlined" className="AuthWidget__log-in-button" fullWidth onClick={logInButtonOnClick}>
                     Log in
                 </Button>
 
                 <SignUpModal
-                    visible={isVisibleSignUpModal}
-                    setVisible={setVisibleSignUpModal}
-                    showConfirmEmailModal={showConfirmEmailModal}
+                    isVisible={isVisibleSignUpModal}
+                    setIsVisible={setIsVisibleSignUpModal}
+                    show={showConfirmEmailModal}
                 />
-                <LogInModal visible={isVisibleLogInModal} setVisible={setVisibleLogInModal} />
-                <ConfirmEmailModal visible={isVisibleConfirmEmailModal} setVisible={setVisibleConfirmEmailModal} />
+                <LogInModal isVisible={isVisibleLogInModal} setIsVisible={setIsVisibleLogInModal} />
+                <ConfirmEmailModal
+                    isVisible={isVisibleConfirmEmailModal}
+                    setIsVisible={setIsVisibleConfirmEmailModal}
+                />
             </div>
         </div>
     );

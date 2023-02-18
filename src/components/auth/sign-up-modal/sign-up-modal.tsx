@@ -8,19 +8,19 @@ import { AuthService } from '../../../services/auth-service';
 import { LocalStorageService } from '../../../services/local-storage-service';
 
 interface SignUpModalProps {
-    setVisible?: any;
-    visible: boolean;
-    showConfirmEmailModal: any;
+    setIsVisible?: any;
+    isVisible: boolean;
+    show: any;
 }
 
-function SignUpModal({ setVisible, showConfirmEmailModal, visible }: SignUpModalProps) {
+function SignUpModal({ isVisible, setIsVisible, show }: SignUpModalProps) {
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    function closeSignUpModal() {
-        setVisible(false);
+    function close() {
+        setIsVisible(false);
     }
 
     function changeUserEmail(event: BaseSyntheticEvent) {
@@ -41,7 +41,7 @@ function SignUpModal({ setVisible, showConfirmEmailModal, visible }: SignUpModal
         try {
             await AuthService.signUpUser(userName, userEmail, userPassword);
 
-            showConfirmEmailModal();
+            show();
         } catch (error) {
             if (error instanceof AxiosError) {
                 const responseErrorMessage: string = error.response?.data.message;
@@ -54,10 +54,10 @@ function SignUpModal({ setVisible, showConfirmEmailModal, visible }: SignUpModal
     }
 
     return (
-        <div className={visible ? 'SignUpModal SignUpModal_active' : 'SignUpModal'} onClick={closeSignUpModal}>
+        <div className={isVisible ? 'SignUpModal SignUpModal_active' : 'SignUpModal'} onClick={close}>
             <div className="SignUpModal__container" onClick={(event: BaseSyntheticEvent) => event.stopPropagation()}>
                 <div className="SignUpModal__header">
-                    <CloseIcon className="SignUpModal__close" onClick={closeSignUpModal} />
+                    <CloseIcon className="SignUpModal__close" onClick={close} />
                     <h1 className="SignUpModal__title">Create an account</h1>
                 </div>
                 <div className="SignUpModal__body">

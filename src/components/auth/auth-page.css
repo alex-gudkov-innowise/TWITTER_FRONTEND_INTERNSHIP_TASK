@@ -1,11 +1,11 @@
-.Auth {
+.AuthPage {
     display: flex;
     flex-direction: row;
     height: 100vh;
     width: 100vw;
 }
 
-.Auth__left-container {
+.AuthPage__left-container {
     flex: 0.5;
     display: flex;
     align-items: center;
@@ -20,13 +20,13 @@
     position: relative;
 }
 
-.Auth__left-container__background {
+.AuthPage__left-container__background {
     color: rgba(0, 0, 0, 0.15);
     position: absolute;
     font-size: 135vh !important;
 }
 
-.Auth__right-container {
+.AuthPage__right-container {
     flex: 0.5;
     display: flex;
     align-items: center;

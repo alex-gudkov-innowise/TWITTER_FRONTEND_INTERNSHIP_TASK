@@ -9,17 +9,17 @@ import { AuthService } from '../../../services/auth-service';
 import { LocalStorageService } from '../../../services/local-storage-service';
 
 interface ConfirmEmailModalProps {
-    setVisible?: any;
-    visible: boolean;
+    setIsVisible?: any;
+    isVisible: boolean;
 }
 
-function ConfirmEmailModal({ setVisible, visible }: ConfirmEmailModalProps) {
+function ConfirmEmailModal({ isVisible, setIsVisible }: ConfirmEmailModalProps) {
     const [verificationCode, setVerificationCode] = useState<string>('');
     const navigateToHome = useNavigateTo('/home');
     const [errorMessage, setErrorMessage] = useState('');
 
     function closeConfirmEmailModal() {
-        setVisible(false);
+        setIsVisible(false);
     }
 
     function changeVerificationCode(event: BaseSyntheticEvent) {
@@ -48,7 +48,7 @@ function ConfirmEmailModal({ setVisible, visible }: ConfirmEmailModalProps) {
 
     return (
         <div
-            className={visible ? 'ConfirmEmailModal ConfirmEmailModal_active' : 'ConfirmEmailModal'}
+            className={isVisible ? 'ConfirmEmailModal ConfirmEmailModal_active' : 'ConfirmEmailModal'}
             onClick={closeConfirmEmailModal}
         >
             <div

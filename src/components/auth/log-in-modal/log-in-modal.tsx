@@ -9,18 +9,18 @@ import { AuthService } from '../../../services/auth-service';
 import { LocalStorageService } from '../../../services/local-storage-service';
 
 interface LogInModalProps {
-    setVisible?: any;
-    visible: boolean;
+    setIsVisible?: any;
+    isVisible: boolean;
 }
 
-function LogInModal({ setVisible, visible }: LogInModalProps) {
+function LogInModal({ isVisible, setIsVisible }: LogInModalProps) {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigateToHome = useNavigateTo('/home');
 
     function closeLogInModal() {
-        setVisible(false);
+        setIsVisible(false);
     }
 
     function changeUserEmail(event: BaseSyntheticEvent) {
@@ -52,7 +52,7 @@ function LogInModal({ setVisible, visible }: LogInModalProps) {
     }
 
     return (
-        <div className={visible ? 'LogInModal LogInModal_active' : 'LogInModal'} onClick={closeLogInModal}>
+        <div className={isVisible ? 'LogInModal LogInModal_active' : 'LogInModal'} onClick={closeLogInModal}>
             <div className="LogInModal__container" onClick={(event: BaseSyntheticEvent) => event.stopPropagation()}>
                 <div className="LogInModal__header">
                     <CloseIcon className="LogInModal__close" onClick={closeLogInModal} />
