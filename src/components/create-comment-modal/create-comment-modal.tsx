@@ -1,16 +1,13 @@
 import './create-comment-modal.css';
 import CloseIcon from '@mui/icons-material/Close';
-import CropOriginalIcon from '@mui/icons-material/CropOriginal';
 import { Button } from '@mui/material';
 import { AxiosError } from 'axios';
 import React, { BaseSyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { eventEmitter } from '../../event-emiter/event-emiter';
-import { useFetching } from '../../hooks/use-fetch';
+import { eventEmitter } from '../../event-emitter/event-emitter';
 import { RecordsEntity } from '../../interfaces/records-entity';
 import { CommentsService } from '../../services/comments-service';
-import { TweetsService } from '../../services/tweets-service';
 
 interface CreateCommentModalProps {
     parentRecord: RecordsEntity;

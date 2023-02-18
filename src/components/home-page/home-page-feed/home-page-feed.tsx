@@ -1,15 +1,14 @@
-import './home-feed.css';
-import { AxiosError } from 'axios';
+import './home-page-feed.css';
 import React, { useEffect, useState } from 'react';
 
-import { eventEmitter } from '../../../event-emiter/event-emiter';
+import { eventEmitter } from '../../../event-emitter/event-emitter';
 import { useFetching } from '../../../hooks/use-fetch';
 import { useNavigateTo } from '../../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../../interfaces/records-entity';
 import { TweetsService } from '../../../services/tweets-service';
 import Post from '../../post/post';
 
-function HomeFeed() {
+function HomePageFeed() {
     const [records, setRecords] = useState<RecordsEntity[]>([]);
     const navigateToAuth = useNavigateTo('/auth');
     const [page, setPage] = useState<number>(0);
@@ -42,17 +41,17 @@ function HomeFeed() {
     }
 
     return (
-        <div className="HomeFeed">
+        <div className="HomePageFeed">
             {records.map(
                 (record: RecordsEntity): JSX.Element => (
                     <Post record={record} key={record.id} />
                 ),
             )}
-            <span className="HomeFeed__view-more" onClick={viewMoreTweets}>
+            <span className="HomePageFeed__view-more" onClick={viewMoreTweets}>
                 View more
             </span>
         </div>
     );
 }
 
-export default HomeFeed;
+export default HomePageFeed;

@@ -6,7 +6,7 @@ import EventEmitter from 'events';
 import React, { BaseSyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { eventEmitter } from '../../event-emiter/event-emiter';
+import { eventEmitter } from '../../event-emitter/event-emitter';
 import { TweetsService } from '../../services/tweets-service';
 
 interface CreateTweetModalProps {

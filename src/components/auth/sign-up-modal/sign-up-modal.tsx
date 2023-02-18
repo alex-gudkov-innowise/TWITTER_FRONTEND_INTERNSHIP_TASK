@@ -2,7 +2,6 @@ import './sign-up-modal.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from '@mui/material';
 import { AxiosError } from 'axios';
-import { log } from 'console';
 import React, { BaseSyntheticEvent, useState } from 'react';
 
 import { AuthService } from '../../../services/auth-service';
@@ -44,8 +43,6 @@ function SignUpModal({ setVisible, showConfirmEmailModal, visible }: SignUpModal
 
             showConfirmEmailModal();
         } catch (error) {
-            console.log('ERR:', error);
-
             if (error instanceof AxiosError) {
                 const responseErrorMessage: string = error.response?.data.message;
 

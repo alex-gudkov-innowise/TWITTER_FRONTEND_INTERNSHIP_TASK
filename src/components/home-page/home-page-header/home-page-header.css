@@ -1,4 +1,4 @@
-.HomeHeader {
+.HomePageHeader {
     position: sticky;
     top: 0;
     border-bottom: 1px solid var(--color-border-gray);
@@ -14,7 +14,7 @@
     
 }
 
-.HomeHeader__text {
+.HomePageHeader__text {
     margin-left: 20px;
     font-size: 20px;
     font-family: 'ChirpMedium';

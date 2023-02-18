@@ -1,4 +1,4 @@
-.Home {
+.HomePage {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,7 +8,7 @@
     width: 100vw;
 }
 
-.Home__container {
+.HomePage__container {
     flex: 0.4;
     border-right: 1px solid var(--color-border-gray);
     overflow-y: scroll;
@@ -19,6 +19,6 @@
     padding-bottom: 50vh;
 }
 
-.Home__container::-webkit-scrollbar {
+.HomePage__container::-webkit-scrollbar {
     display: none; /* hide for Chrome, Safari, Opera */
 }
