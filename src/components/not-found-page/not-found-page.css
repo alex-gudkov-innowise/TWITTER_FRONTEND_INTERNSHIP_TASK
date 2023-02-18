@@ -1,4 +1,4 @@
-.NotFound {
+.NotFoundPage {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,7 +8,7 @@
     width: 100vw;
 }
 
-.NotFound__container {
+.NotFoundPage__container {
     flex: 0.4;
     border-right: 1px solid var(--color-border-gray);
     overflow-y: scroll;
@@ -19,11 +19,11 @@
     padding-bottom: 50vh;
 }
 
-.NotFound__container::-webkit-scrollbar {
+.NotFoundPage__container::-webkit-scrollbar {
     display: none; /* hide for Chrome, Safari, Opera */
 }
 
-.NotFound__header {
+.NotFoundPage__header {
     position: sticky;
     top: 0;
     border-bottom: 1px solid var(--color-border-gray);
@@ -39,13 +39,13 @@
     
 }
 
-.NotFound__title {
+.NotFoundPage__title {
     font-size: 20px;
     font-family: 'ChirpMedium';
     font-weight: normal;
 }
 
-.NotFound__back-button {
+.NotFoundPage__back-button {
     font-size: 22px !important;
     padding: 8px;
     border-radius: 20px;
@@ -53,19 +53,19 @@
     margin-left: 10px;
 }
 
-.NotFound__back-button:hover {
+.NotFoundPage__back-button:hover {
     transition: 300ms ease;
     background-color: var(--color-gray);
     cursor: pointer;
 }
 
-.NotFound__body {
+.NotFoundPage__body {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.NotFound__text {
+.NotFoundPage__text {
     font-size: 18px;
     margin-top: 20px;
     font-family: 'Chirp';

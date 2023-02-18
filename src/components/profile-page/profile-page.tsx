@@ -43,11 +43,13 @@ function ProfilePage() {
     return (
         <div className="ProfilePage">
             <Sidebar activeElement="ProfilePage" />
+
             <div className="ProfilePage__container">
                 <ProfilePageHeader user={currentUser} />
                 <ProfilePageInfo user={currentUser} />
                 <ProfilePageFeed records={records} />
             </div>
+
             <Widgets />
         </div>
     );

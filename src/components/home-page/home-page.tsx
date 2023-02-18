@@ -11,10 +11,12 @@ function HomePage() {
     return (
         <div className="HomePage">
             <Sidebar activeElement="HomePage" />
+
             <div className="HomePage__container">
                 <HomePageHeader />
                 <HomePageFeed />
             </div>
+
             <Widgets />
         </div>
     );

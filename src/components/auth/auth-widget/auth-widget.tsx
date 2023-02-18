@@ -41,6 +41,7 @@ function AuthWidget() {
                 >
                     Sign Up
                 </Button>
+
                 <Button variant="outlined" className="AuthWidget__log-in-button" fullWidth onClick={logInButtonOnClick}>
                     Log in
                 </Button>
@@ -50,7 +51,9 @@ function AuthWidget() {
                     setIsVisible={setIsVisibleSignUpModal}
                     show={showConfirmEmailModal}
                 />
+
                 <LogInModal isVisible={isVisibleLogInModal} setIsVisible={setIsVisibleLogInModal} />
+
                 <ConfirmEmailModal
                     isVisible={isVisibleConfirmEmailModal}
                     setIsVisible={setIsVisibleConfirmEmailModal}
