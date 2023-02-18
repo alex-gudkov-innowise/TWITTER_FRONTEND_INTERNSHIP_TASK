@@ -1,4 +1,4 @@
-.ProfileHeader {
+.ProfilePageHeader {
     position: sticky;
     top: 0;
     border-bottom: 1px solid var(--color-border-gray);
@@ -12,7 +12,7 @@
     color: var(--color-white);
 }
 
-.ProfileHeader__body {
+.ProfilePageHeader__body {
     height: 50px;
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@
     border: none;
 }
 
-.ProfileHeader__back-button {
+.ProfilePageHeader__back-button {
     font-size: 22px !important;
     padding: 8px;
     border-radius: 20px;
@@ -28,19 +28,19 @@
     margin-left: 10px;
 }
 
-.ProfileHeader__back-button:hover {
+.ProfilePageHeader__back-button:hover {
     transition: 300ms ease;
     background-color: var(--color-gray);
     cursor: pointer;
 }
 
-.ProfileHeader__user-name {
+.ProfilePageHeader__user-name {
     font-size: 20px;
     font-family: 'ChirpMedium';
     margin: 0;
 }
 
-.ProfileHeader__tweets-count {
+.ProfilePageHeader__tweets-count {
     margin: 0;
     font-size: 14px;
     font-family: 'Chirp';

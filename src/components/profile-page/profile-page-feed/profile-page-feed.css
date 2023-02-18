@@ -1,4 +1,4 @@
-.Feed {
+.ProfilePageFeed {
     flex: 0.4;
     border-right: 1px solid var(--color-border-gray);
     /* min-width: fit-content; */
@@ -11,6 +11,6 @@
 }
 
 
-.Feed::-webkit-scrollbar {
+.ProfilePageFeed::-webkit-scrollbar {
     display: none; /* hide for Chrome, Safari, Opera */
 }

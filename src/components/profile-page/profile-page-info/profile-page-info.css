@@ -1,4 +1,4 @@
-.ProfileInfo {
+.ProfilePageInfo {
     display: flex;
     flex-direction: column;
     font-size: 15px;
@@ -7,7 +7,7 @@
     border-bottom: 1px solid var(--color-border-gray);
 }
 
-.ProfileInfo__background {
+.ProfilePageInfo__background {
     background-color: var(--color-border-gray);
     height: 200px;
     width: 100%;
@@ -17,11 +17,11 @@
     background-repeat: no-repeat;
 }
 
-.ProfileInfo__header {
+.ProfilePageInfo__header {
     display: flex;
 }
 
-.ProfileInfo__avatar {
+.ProfilePageInfo__avatar {
     height: 140px;
     width: 140px;
     border-radius: 70px;
@@ -30,60 +30,60 @@
     margin-left: 15px;
 }
 
-.ProfileInfo__body {
+.ProfilePageInfo__body {
      display: flex;
      flex-direction: column;
      padding: 0 15px 20px 15px;
 }
 
-.ProfileInfo__user-name {
+.ProfilePageInfo__user-name {
     font-size: 20px;
     font-family: 'ChirpMedium';
 }
-.ProfileInfo__joined-container {
+.ProfilePageInfo__joined-container {
     margin-top: 10px;
     display: flex;
     align-items: center;
 }
 
-.ProfileInfo__joined-icon {
+.ProfilePageInfo__joined-icon {
     color: var(--color-white-gray);
     margin: 0;
     font-size: 20px !important;
     margin-right: 5px;
 }
 
-.ProfileInfo__joined-date {
+.ProfilePageInfo__joined-date {
     color: var(--color-white-gray);
 }
     
-.ProfileInfo__following-and-followers {
+.ProfilePageInfo__following-and-followers {
     margin-top: 10px;
     display: flex;
     color: var(--color-white-gray);
 }
 
-.ProfileInfo__following-count {
+.ProfilePageInfo__following-count {
     font-family: 'ChirpMedium';
     color: var(--color-white);
 }
 
-.ProfileInfo__followers-count {
+.ProfilePageInfo__followers-count {
     font-family: 'ChirpMedium';
     color: var(--color-white);
 }
 
-.ProfileInfo__following {
+.ProfilePageInfo__following {
     margin-right: 15px;
 }
 
-.ProfileInfo__following:hover {
+.ProfilePageInfo__following:hover {
     text-decoration: underline;
     text-decoration-color: var(--color-white);
     cursor: pointer;
 }
 
-.ProfileInfo__followers:hover {
+.ProfilePageInfo__followers:hover {
     text-decoration: underline;
     text-decoration-color: var(--color-white);
     cursor: pointer;

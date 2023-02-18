@@ -5,7 +5,7 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Auth from './components/auth/auth';
 import HomePage from './components/home-page/home-page';
 import NotFound from './components/not-found/not-found';
-import Profile from './components/profile/profile';
+import ProfilePage from './components/profile-page/profile-page';
 import RecordPage from './components/record-page/record-page';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/home" element={<HomePage />} />
-                    <Route path="/profile/:userId" element={<Profile />} />
+                    <Route path="/profile/:userId" element={<ProfilePage />} />
                     <Route path="/record/:recordId" element={<RecordPage />} />
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/*" element={<NotFound />} />

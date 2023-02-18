@@ -1,16 +1,16 @@
+import './profile-page-feed.css';
 import React from 'react';
 
-import './profile-feed.css';
 import { RecordsEntity } from '../../../interfaces/records-entity';
 import Post from '../../post/post';
 
-interface ProfileFeedProps {
+interface ProfilePageFeedProps {
     records: RecordsEntity[];
 }
 
-function ProfileFeed({ records }: ProfileFeedProps) {
+function ProfilePageFeed({ records }: ProfilePageFeedProps) {
     return (
-        <div className="ProfileFeed">
+        <div className="ProfilePageFeed">
             {records.map(
                 (record: RecordsEntity): JSX.Element => (
                     <Post record={record} key={record.id} />
@@ -20,4 +20,4 @@ function ProfileFeed({ records }: ProfileFeedProps) {
     );
 }
 
-export default ProfileFeed;
+export default ProfilePageFeed;

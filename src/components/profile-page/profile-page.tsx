@@ -1,4 +1,4 @@
-import './profile.css';
+import './profile-page.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -11,11 +11,11 @@ import { UsersService } from '../../services/users-service';
 import Sidebar from '../sidebar/sidebar';
 import Widgets from '../widgets/widgets';
 
-import ProfileFeed from './profile-feed/profile-feed';
-import ProfileHeader from './profile-header/profile-header';
-import ProfileInfo from './profile-info/profile-info';
+import ProfilePageFeed from './profile-page-feed/profile-page-feed';
+import ProfilePageHeader from './profile-page-header/profile-page-header';
+import ProfilePageInfo from './profile-page-info/profile-page-info';
 
-function Profile() {
+function ProfilePage() {
     const { userId = '' } = useParams<string>();
     const [records, setRecords] = useState<RecordsEntity[]>([]);
     const navigateToAuth = useNavigateTo('/auth');
@@ -23,7 +23,7 @@ function Profile() {
     if (!currentUser) {
         navigateToAuth();
 
-        return <div className="Profile"></div>;
+        return <div className="ProfilePage"></div>;
     }
 
     const [fetchAllFeed, isAllFeedLoading] = useFetching(async () => {
@@ -41,16 +41,16 @@ function Profile() {
     }, []);
 
     return (
-        <div className="Profile">
-            <Sidebar activeElement="Profile" />
-            <div className="Profile__container">
-                <ProfileHeader user={currentUser} />
-                <ProfileInfo user={currentUser} />
-                <ProfileFeed records={records} />
+        <div className="ProfilePage">
+            <Sidebar activeElement="ProfilePage" />
+            <div className="ProfilePage__container">
+                <ProfilePageHeader user={currentUser} />
+                <ProfilePageInfo user={currentUser} />
+                <ProfilePageFeed records={records} />
             </div>
             <Widgets />
         </div>
     );
 }
 
-export default Profile;
+export default ProfilePage;
