@@ -6,7 +6,7 @@ import { useFetching } from '../../../hooks/use-fetch';
 import { useNavigateTo } from '../../../hooks/use-navigate-to';
 import { RecordsEntity } from '../../../interfaces/records-entity';
 import { TweetsService } from '../../../services/tweets-service';
-import Post from '../../post/post';
+import Post from '../../post/record';
 
 function HomePageFeed() {
     const [records, setRecords] = useState<RecordsEntity[]>([]);

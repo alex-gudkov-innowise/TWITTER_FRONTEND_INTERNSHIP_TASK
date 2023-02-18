@@ -1,48 +1,47 @@
-
-.PostHeader {
+.RecordHeader {
     display: flex;
     justify-content: space-between;
 }
 
-.PostHeader__body {
+.RecordHeader__body {
     display: flex;
 }
 
-.PostHeader__avatar {
+.RecordHeader__avatar {
     height: 50px;
     width: 50px;
     border-radius: 25px;
     cursor: pointer;
 }
 
-.PostHeader__avatar:hover {
+.RecordHeader__avatar:hover {
     opacity: 0.8;
 }
 
-.PostHeader__user-name {
+.RecordHeader__user-name {
     color: var(--color-white);
     font-family: 'ChirpMedium';
     margin-left: 10px;
 }
 
-.PostHeader__user-name:hover {
+.RecordHeader__user-name:hover {
     cursor: pointer;
     text-decoration: underline;
 }
 
-.PostHeader__created-at {
+.RecordHeader__created-at {
     margin-left: 10px;
     color: var(--color-white-gray);
 }
 
-.PostHeader__more {
+.RecordHeader__more {
     color: var(--color-white-gray);
     font-size: 22px !important;
     padding: 8px;
     border-radius: 20px;
 }
 
-.PostHeader__more:hover {
+.RecordHeader__more:hover {
     color: var(--color-blue);
     transition: 300ms ease;
     background-color: var(--color-dark-blue);

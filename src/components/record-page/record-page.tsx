@@ -7,7 +7,7 @@ import { useFetching } from '../../hooks/use-fetch';
 import { RecordsEntity } from '../../interfaces/records-entity';
 import { RecordsService } from '../../services/records-service';
 import Comment from '../comment/comment';
-import Post from '../post/post';
+import Post from '../post/record';
 import Sidebar from '../sidebar/sidebar';
 import Widgets from '../widgets/widgets';
 

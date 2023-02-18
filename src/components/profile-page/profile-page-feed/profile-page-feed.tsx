@@ -2,7 +2,7 @@ import './profile-page-feed.css';
 import React from 'react';
 
 import { RecordsEntity } from '../../../interfaces/records-entity';
-import Post from '../../post/post';
+import Post from '../../post/record';
 
 interface ProfilePageFeedProps {
     records: RecordsEntity[];

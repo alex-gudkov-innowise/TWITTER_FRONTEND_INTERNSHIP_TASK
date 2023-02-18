@@ -3,9 +3,9 @@ import React, { BaseSyntheticEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { RecordsEntity } from '../../interfaces/records-entity';
-import PostBody from '../post/post-body/post-body';
-import PostFooter from '../post/post-footer/post-footer';
-import PostHeader from '../post/post-header/post-header';
+import PostBody from '../post/record-body/record-body';
+import PostFooter from '../post/record-footer/record-footer';
+import PostHeader from '../post/record-header/record-header';
 
 interface CommentProps {
     record: RecordsEntity;

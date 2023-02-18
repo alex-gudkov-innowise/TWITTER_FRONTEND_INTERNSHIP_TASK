@@ -1,22 +1,22 @@
-import './post-footer.css';
+import './record-footer.css';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
 
-import { PostFooterInfo } from '../../../interfaces/post-footer-info';
+import { RecordFooterInfo } from '../../../interfaces/record-footer-info';
 import { RecordsEntity } from '../../../interfaces/records-entity';
 import { CommentsService } from '../../../services/comments-service';
 import CreateCommentModal from '../../create-comment-modal/create-comment-modal';
 
-interface PostFooterProps {
+interface RecordFooterProps {
     record: RecordsEntity;
 }
 
-function PostFooter({ record }: PostFooterProps) {
+function RecordFooter({ record }: RecordFooterProps) {
     const [isVisibleCreateCommentModal, setVisibleCreateCommentModal] = useState(false);
-    const [postFooterInfo, setPostFooterInfo] = useState<PostFooterInfo>({
+    const [postFooterInfo, setRecordFooterInfo] = useState<RecordFooterInfo>({
         commentsCount: 0,
         retweetsCount: 0,
         likesCount: 0,
@@ -26,7 +26,7 @@ function PostFooter({ record }: PostFooterProps) {
         try {
             const commentsCount = await CommentsService.getRecordCommentsCount(record.id);
 
-            setPostFooterInfo({
+            setRecordFooterInfo({
                 ...postFooterInfo,
                 commentsCount: commentsCount.commentsCount,
             });
@@ -58,21 +58,21 @@ function PostFooter({ record }: PostFooterProps) {
     }
 
     return (
-        <div className="PostFooter">
-            <div className="PostFooter__comment" onClick={showCreateCommentModal}>
-                <ChatBubbleOutlineIcon fontSize="small" className="PostFooter__comment-icon" />
+        <div className="RecordFooter">
+            <div className="RecordFooter__comment" onClick={showCreateCommentModal}>
+                <ChatBubbleOutlineIcon fontSize="small" className="RecordFooter__comment-icon" />
                 <span>{postFooterInfo.commentsCount ? postFooterInfo.commentsCount : ''}</span>
             </div>
-            <div className="PostFooter__retweet" onClick={showCreateRetweetModal}>
-                <RepeatIcon fontSize="small" className="PostFooter__retweet-icon" />
+            <div className="RecordFooter__retweet" onClick={showCreateRetweetModal}>
+                <RepeatIcon fontSize="small" className="RecordFooter__retweet-icon" />
                 <span>{postFooterInfo.retweetsCount ? postFooterInfo.retweetsCount : ''}</span>
             </div>
-            <div className="PostFooter__like" onClick={createLikeOnRecord}>
-                <FavoriteBorderIcon fontSize="small" className="PostFooter__like-icon" />
+            <div className="RecordFooter__like" onClick={createLikeOnRecord}>
+                <FavoriteBorderIcon fontSize="small" className="RecordFooter__like-icon" />
                 <span>{postFooterInfo.likesCount ? postFooterInfo.likesCount : ''}</span>
             </div>
-            <div className="PostFooter__share">
-                <IosShareIcon fontSize="small" className="PostFooter__share-icon" onClick={showShareRecordModal} />
+            <div className="RecordFooter__share">
+                <IosShareIcon fontSize="small" className="RecordFooter__share-icon" onClick={showShareRecordModal} />
             </div>
 
             <CreateCommentModal
@@ -84,4 +84,4 @@ function PostFooter({ record }: PostFooterProps) {
     );
 }
 
-export default PostFooter;
+export default RecordFooter;
